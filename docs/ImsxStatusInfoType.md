@@ -1,4 +1,4 @@
-# SwaggerClient::ImsxStatusInfoType
+# OneRosterClient::ImsxStatusInfoType
 
 ## Properties
 Name | Type | Description | Notes

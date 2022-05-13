@@ -1,4 +1,4 @@
-# SwaggerClient::DemographicType
+# OneRosterClient::DemographicType
 
 ## Properties
 Name | Type | Description | Notes

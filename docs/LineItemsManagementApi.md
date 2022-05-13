@@ -1,4 +1,4 @@
-# SwaggerClient::LineItemsManagementApi
+# OneRosterClient::LineItemsManagementApi
 
 All URIs are relative to */*
 
@@ -20,21 +20,21 @@ The REST delete request message for the deleteLineItem() API call.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'oneroster_client'
 # setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::LineItemsManagementApi.new
+api_instance = OneRosterClient::LineItemsManagementApi.new
 sourced_id = 'sourced_id_example' # String | ...tbd...
 
 
 begin
   #The REST delete request message for the deleteLineItem() API call.
   api_instance.delete_line_item(sourced_id)
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling LineItemsManagementApi->delete_line_item: #{e}"
 end
 ```
@@ -70,14 +70,14 @@ The REST read request message for the getLineItem() API call.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'oneroster_client'
 # setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::LineItemsManagementApi.new
+api_instance = OneRosterClient::LineItemsManagementApi.new
 sourced_id = 'sourced_id_example' # String | ...tbd...
 
 
@@ -85,7 +85,7 @@ begin
   #The REST read request message for the getLineItem() API call.
   result = api_instance.get_line_item(sourced_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling LineItemsManagementApi->get_line_item: #{e}"
 end
 ```
@@ -121,14 +121,14 @@ The REST read request message for the getLineItems() API call.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'oneroster_client'
 # setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::LineItemsManagementApi.new
+api_instance = OneRosterClient::LineItemsManagementApi.new
 opts = { 
   limit: 100, # Integer | To define the download segmentation value i.e. the maximum number of records to be contained in the response.
   offset: 0, # Integer | The number of the first record to be supplied in the segmented response message.
@@ -143,7 +143,7 @@ begin
   #The REST read request message for the getLineItems() API call.
   result = api_instance.get_line_items(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling LineItemsManagementApi->get_line_items: #{e}"
 end
 ```
@@ -185,14 +185,14 @@ The REST read request message for the getLineItemsForClass() API call.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'oneroster_client'
 # setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::LineItemsManagementApi.new
+api_instance = OneRosterClient::LineItemsManagementApi.new
 class_sourced_id = 'class_sourced_id_example' # String | ...tbd...
 opts = { 
   limit: 100, # Integer | To define the download segmentation value i.e. the maximum number of records to be contained in the response.
@@ -208,7 +208,7 @@ begin
   #The REST read request message for the getLineItemsForClass() API call.
   result = api_instance.get_line_items_for_class(class_sourced_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling LineItemsManagementApi->get_line_items_for_class: #{e}"
 end
 ```
@@ -251,22 +251,22 @@ The REST create request message for the putLineItem() API call.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'oneroster_client'
 # setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::LineItemsManagementApi.new
-body = SwaggerClient::SingleLineItemType.new # SingleLineItemType | ...tbd...
+api_instance = OneRosterClient::LineItemsManagementApi.new
+body = OneRosterClient::SingleLineItemType.new # SingleLineItemType | ...tbd...
 sourced_id = 'sourced_id_example' # String | ...tbd...
 
 
 begin
   #The REST create request message for the putLineItem() API call.
   api_instance.put_line_item(bodysourced_id)
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling LineItemsManagementApi->put_line_item: #{e}"
 end
 ```

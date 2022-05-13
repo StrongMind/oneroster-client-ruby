@@ -1,4 +1,4 @@
-# SwaggerClient::DemographicsManagementApi
+# OneRosterClient::DemographicsManagementApi
 
 All URIs are relative to */*
 
@@ -17,14 +17,14 @@ The REST read request message for the getDemographic() API call.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'oneroster_client'
 # setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::DemographicsManagementApi.new
+api_instance = OneRosterClient::DemographicsManagementApi.new
 sourced_id = 'sourced_id_example' # String | ...tbd...
 
 
@@ -32,7 +32,7 @@ begin
   #The REST read request message for the getDemographic() API call.
   result = api_instance.get_demographic(sourced_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling DemographicsManagementApi->get_demographic: #{e}"
 end
 ```
@@ -68,14 +68,14 @@ The REST read request message for the getDemographics() API call.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'oneroster_client'
 # setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::DemographicsManagementApi.new
+api_instance = OneRosterClient::DemographicsManagementApi.new
 opts = { 
   limit: 100, # Integer | To define the download segmentation value i.e. the maximum number of records to be contained in the response.
   offset: 0, # Integer | The number of the first record to be supplied in the segmented response message.
@@ -90,7 +90,7 @@ begin
   #The REST read request message for the getDemographics() API call.
   result = api_instance.get_demographics(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling DemographicsManagementApi->get_demographics: #{e}"
 end
 ```

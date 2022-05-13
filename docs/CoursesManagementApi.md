@@ -1,4 +1,4 @@
-# SwaggerClient::CoursesManagementApi
+# OneRosterClient::CoursesManagementApi
 
 All URIs are relative to */*
 
@@ -18,14 +18,14 @@ To read, get, a specific course.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'oneroster_client'
 # setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::CoursesManagementApi.new
+api_instance = OneRosterClient::CoursesManagementApi.new
 sourced_id = 'sourced_id_example' # String | The unique identifier for this course.
 
 
@@ -33,7 +33,7 @@ begin
   #The REST read request message for the getCourse() API call.
   result = api_instance.get_course(sourced_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling CoursesManagementApi->get_course: #{e}"
 end
 ```
@@ -69,14 +69,14 @@ To read, get, a collection of courses i.e. all courses.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'oneroster_client'
 # setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::CoursesManagementApi.new
+api_instance = OneRosterClient::CoursesManagementApi.new
 opts = { 
   limit: 100, # Integer | To define the download segmentation value i.e. the maximum number of records to be contained in the response.
   offset: 0, # Integer | The number of the first record to be supplied in the segmented response message.
@@ -91,7 +91,7 @@ begin
   #The REST read request message for the getCourses() API call.
   result = api_instance.get_courses(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling CoursesManagementApi->get_courses: #{e}"
 end
 ```
@@ -133,14 +133,14 @@ The REST read request message for the getCoursesForSchool() API call.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'oneroster_client'
 # setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::CoursesManagementApi.new
+api_instance = OneRosterClient::CoursesManagementApi.new
 school_sourced_id = 'school_sourced_id_example' # String | ...tbd...
 opts = { 
   limit: 100, # Integer | To define the download segmentation value i.e. the maximum number of records to be contained in the response.
@@ -156,7 +156,7 @@ begin
   #The REST read request message for the getCoursesForSchool() API call.
   result = api_instance.get_courses_for_school(school_sourced_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling CoursesManagementApi->get_courses_for_school: #{e}"
 end
 ```

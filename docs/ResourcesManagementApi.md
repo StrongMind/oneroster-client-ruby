@@ -1,4 +1,4 @@
-# SwaggerClient::ResourcesManagementApi
+# OneRosterClient::ResourcesManagementApi
 
 All URIs are relative to */*
 
@@ -19,14 +19,14 @@ The REST read request message for the getResource() API call.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'oneroster_client'
 # setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::ResourcesManagementApi.new
+api_instance = OneRosterClient::ResourcesManagementApi.new
 sourced_id = 'sourced_id_example' # String | ...tbd...
 
 
@@ -34,7 +34,7 @@ begin
   #The REST read request message for the getResource() API call.
   result = api_instance.get_resource(sourced_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling ResourcesManagementApi->get_resource: #{e}"
 end
 ```
@@ -70,14 +70,14 @@ The REST read request message for the getResources() API call.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'oneroster_client'
 # setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::ResourcesManagementApi.new
+api_instance = OneRosterClient::ResourcesManagementApi.new
 opts = { 
   limit: 100, # Integer | To define the download segmentation value i.e. the maximum number of records to be contained in the response.
   offset: 0, # Integer | The number of the first record to be supplied in the segmented response message.
@@ -92,7 +92,7 @@ begin
   #The REST read request message for the getResources() API call.
   result = api_instance.get_resources(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling ResourcesManagementApi->get_resources: #{e}"
 end
 ```
@@ -134,14 +134,14 @@ The REST read request message for the getResourcesForClass() API call.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'oneroster_client'
 # setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::ResourcesManagementApi.new
+api_instance = OneRosterClient::ResourcesManagementApi.new
 class_sourced_id = 'class_sourced_id_example' # String | ...tbd...
 opts = { 
   limit: 100, # Integer | To define the download segmentation value i.e. the maximum number of records to be contained in the response.
@@ -157,7 +157,7 @@ begin
   #The REST read request message for the getResourcesForClass() API call.
   result = api_instance.get_resources_for_class(class_sourced_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling ResourcesManagementApi->get_resources_for_class: #{e}"
 end
 ```
@@ -200,14 +200,14 @@ The REST read request message for the getResourcesForCourse() API call.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'oneroster_client'
 # setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::ResourcesManagementApi.new
+api_instance = OneRosterClient::ResourcesManagementApi.new
 course_sourced_id = 'course_sourced_id_example' # String | ...tbd...
 opts = { 
   limit: 100, # Integer | To define the download segmentation value i.e. the maximum number of records to be contained in the response.
@@ -223,7 +223,7 @@ begin
   #The REST read request message for the getResourcesForCourse() API call.
   result = api_instance.get_resources_for_course(course_sourced_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling ResourcesManagementApi->get_resources_for_course: #{e}"
 end
 ```

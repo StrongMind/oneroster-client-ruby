@@ -1,4 +1,4 @@
-# SwaggerClient::UsersType
+# OneRosterClient::UsersType
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# SwaggerClient::LineItemType
+# OneRosterClient::LineItemType
 
 ## Properties
 Name | Type | Description | Notes

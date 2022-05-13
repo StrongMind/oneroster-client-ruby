@@ -1,4 +1,4 @@
-# SwaggerClient::OrgsType
+# OneRosterClient::OrgsType
 
 ## Properties
 Name | Type | Description | Notes

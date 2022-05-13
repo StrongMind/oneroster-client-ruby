@@ -1,4 +1,4 @@
-# SwaggerClient::GUIDRefType
+# OneRosterClient::GUIDRefType
 
 ## Properties
 Name | Type | Description | Notes

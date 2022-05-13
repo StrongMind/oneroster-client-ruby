@@ -1,4 +1,4 @@
-# SwaggerClient::AcademicSessionsManagementApi
+# OneRosterClient::AcademicSessionsManagementApi
 
 All URIs are relative to */*
 
@@ -17,14 +17,14 @@ To read, get, a specific academic session.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'oneroster_client'
 # setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::AcademicSessionsManagementApi.new
+api_instance = OneRosterClient::AcademicSessionsManagementApi.new
 sourced_id = 'sourced_id_example' # String | The unique identifier for this academic session.
 
 
@@ -32,7 +32,7 @@ begin
   #The REST read request message for the getAcademicSession() API call.
   result = api_instance.get_academic_session(sourced_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling AcademicSessionsManagementApi->get_academic_session: #{e}"
 end
 ```
@@ -68,14 +68,14 @@ To read, get, a collection of academic sessions i.e. all academic sessions.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'oneroster_client'
 # setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::AcademicSessionsManagementApi.new
+api_instance = OneRosterClient::AcademicSessionsManagementApi.new
 opts = { 
   limit: 100, # Integer | To define the download segmentation value i.e. the maximum number of records to be contained in the response.
   offset: 0, # Integer | The number of the first record to be supplied in the segmented response message.
@@ -90,7 +90,7 @@ begin
   #The REST read request message for the getAcademicSessions() API call.
   result = api_instance.get_academic_sessions(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling AcademicSessionsManagementApi->get_academic_sessions: #{e}"
 end
 ```

@@ -1,4 +1,4 @@
-# SwaggerClient::ClassTypeAllOf
+# OneRosterClient::ClassTypeAllOf
 
 ## Properties
 Name | Type | Description | Notes

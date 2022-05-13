@@ -1,6 +1,6 @@
-# swagger_client
+# oneroster_client
 
-SwaggerClient - the Ruby gem for the OneRoster OpenAPI (JSON) Definition
+OneRosterClient - the Ruby gem for the OneRoster OpenAPI (JSON) Definition
 
 The OneRoster service binding is available in WSDL/XSD and REST/JSON. The model is based upon the IMS PSM modelling approach.
 
@@ -18,27 +18,27 @@ For more information, please visit [http://www.strongmind.com](http://www.strong
 To build the Ruby code into a gem:
 
 ```shell
-gem build swagger_client.gemspec
+gem build oneroster_client.gemspec
 ```
 
 Then either install the gem locally:
 
 ```shell
-gem install ./swagger_client-1.0.0.gem
+gem install ./oneroster_client-1.0.0.gem
 ```
-(for development, run `gem install --dev ./swagger_client-1.0.0.gem` to install the development dependencies)
+(for development, run `gem install --dev ./oneroster_client-1.0.0.gem` to install the development dependencies)
 
 or publish the gem to a gem hosting service, e.g. [RubyGems](https://rubygems.org/).
 
 Finally add this to the Gemfile:
 
-    gem 'swagger_client', '~> 1.0.0'
+    gem 'oneroster_client', '~> 1.0.0'
 
 ### Install from Git
 
 If the Ruby gem is hosted at a git repository: https://github.com/GIT_USER_ID/GIT_REPO_ID, then add the following in the Gemfile:
 
-    gem 'swagger_client', :git => 'https://github.com/GIT_USER_ID/GIT_REPO_ID.git'
+    gem 'oneroster_client', :git => 'https://github.com/GIT_USER_ID/GIT_REPO_ID.git'
 
 ### Include the Ruby code directly
 
@@ -53,14 +53,14 @@ ruby -Ilib script.rb
 Please follow the [installation](#installation) procedure and then run the following code:
 ```ruby
 # Load the gem
-require 'swagger_client'
+require 'oneroster_client'
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::AcademicSessionsManagementApi.new
+api_instance = OneRosterClient::AcademicSessionsManagementApi.new
 sourced_id = 'sourced_id_example' # String | The unique identifier for this academic session.
 
 
@@ -68,16 +68,16 @@ begin
   #The REST read request message for the getAcademicSession() API call.
   result = api_instance.get_academic_session(sourced_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling AcademicSessionsManagementApi->get_academic_session: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::AcademicSessionsManagementApi.new
+api_instance = OneRosterClient::AcademicSessionsManagementApi.new
 opts = { 
   limit: 100, # Integer | To define the download segmentation value i.e. the maximum number of records to be contained in the response.
   offset: 0, # Integer | The number of the first record to be supplied in the segmented response message.
@@ -92,32 +92,32 @@ begin
   #The REST read request message for the getAcademicSessions() API call.
   result = api_instance.get_academic_sessions(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling AcademicSessionsManagementApi->get_academic_sessions: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::CategoriesManagementApi.new
+api_instance = OneRosterClient::CategoriesManagementApi.new
 sourced_id = 'sourced_id_example' # String | ...tbd...
 
 
 begin
   #The REST delete request message for the deleteCategory() API call.
   api_instance.delete_category(sourced_id)
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling CategoriesManagementApi->delete_category: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::CategoriesManagementApi.new
+api_instance = OneRosterClient::CategoriesManagementApi.new
 opts = { 
   limit: 100, # Integer | To define the download segmentation value i.e. the maximum number of records to be contained in the response.
   offset: 0, # Integer | The number of the first record to be supplied in the segmented response message.
@@ -132,16 +132,16 @@ begin
   #The REST read request message for the getCategories() API call.
   result = api_instance.get_categories(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling CategoriesManagementApi->get_categories: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::CategoriesManagementApi.new
+api_instance = OneRosterClient::CategoriesManagementApi.new
 sourced_id = 'sourced_id_example' # String | ...tbd...
 
 
@@ -149,33 +149,33 @@ begin
   #The REST read request message for the getCategory() API call.
   result = api_instance.get_category(sourced_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling CategoriesManagementApi->get_category: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::CategoriesManagementApi.new
-body = SwaggerClient::SingleCategoryType.new # SingleCategoryType | ...tbd...
+api_instance = OneRosterClient::CategoriesManagementApi.new
+body = OneRosterClient::SingleCategoryType.new # SingleCategoryType | ...tbd...
 sourced_id = 'sourced_id_example' # String | ...tbd...
 
 
 begin
   #The REST create request message for the putCategory() API call.
   api_instance.put_category(body, sourced_id)
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling CategoriesManagementApi->put_category: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::ClassesManagementApi.new
+api_instance = OneRosterClient::ClassesManagementApi.new
 sourced_id = 'sourced_id_example' # String | The unique identifier for this class.
 
 
@@ -183,16 +183,16 @@ begin
   #The REST read request message for the getClass() API call.
   result = api_instance.get_class(sourced_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling ClassesManagementApi->get_class: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::ClassesManagementApi.new
+api_instance = OneRosterClient::ClassesManagementApi.new
 opts = { 
   limit: 100, # Integer | To define the download segmentation value i.e. the maximum number of records to be contained in the response.
   offset: 0, # Integer | The number of the first record to be supplied in the segmented response message.
@@ -207,16 +207,16 @@ begin
   #The REST read request message for the getClasses() API call.
   result = api_instance.get_classes(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling ClassesManagementApi->get_classes: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::ClassesManagementApi.new
+api_instance = OneRosterClient::ClassesManagementApi.new
 course_sourced_id = 'course_sourced_id_example' # String | ...tbd...
 opts = { 
   limit: 100, # Integer | To define the download segmentation value i.e. the maximum number of records to be contained in the response.
@@ -232,16 +232,16 @@ begin
   #The REST read request message for the getClassesForCourse() API call.
   result = api_instance.get_classes_for_course(course_sourced_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling ClassesManagementApi->get_classes_for_course: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::ClassesManagementApi.new
+api_instance = OneRosterClient::ClassesManagementApi.new
 school_sourced_id = 'school_sourced_id_example' # String | ...tbd...
 opts = { 
   limit: 100, # Integer | To define the download segmentation value i.e. the maximum number of records to be contained in the response.
@@ -257,16 +257,16 @@ begin
   #The REST read request message for the getClassesForSchool() API call.
   result = api_instance.get_classes_for_school(school_sourced_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling ClassesManagementApi->get_classes_for_school: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::ClassesManagementApi.new
+api_instance = OneRosterClient::ClassesManagementApi.new
 student_sourced_id = 'student_sourced_id_example' # String | ...tbd...
 opts = { 
   limit: 100, # Integer | To define the download segmentation value i.e. the maximum number of records to be contained in the response.
@@ -282,16 +282,16 @@ begin
   #The REST read request message for the getClassesForStudent() API call.
   result = api_instance.get_classes_for_student(student_sourced_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling ClassesManagementApi->get_classes_for_student: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::ClassesManagementApi.new
+api_instance = OneRosterClient::ClassesManagementApi.new
 teacher_sourced_id = 'teacher_sourced_id_example' # String | ...tbd...
 opts = { 
   limit: 100, # Integer | To define the download segmentation value i.e. the maximum number of records to be contained in the response.
@@ -307,16 +307,16 @@ begin
   #The REST read request message for the getClassesForTeacher() API call.
   result = api_instance.get_classes_for_teacher(teacher_sourced_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling ClassesManagementApi->get_classes_for_teacher: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::ClassesManagementApi.new
+api_instance = OneRosterClient::ClassesManagementApi.new
 term_sourced_id = 'term_sourced_id_example' # String | ...tbd...
 opts = { 
   limit: 100, # Integer | To define the download segmentation value i.e. the maximum number of records to be contained in the response.
@@ -332,16 +332,16 @@ begin
   #The REST read request message for the getClassesForTerm() API call.
   result = api_instance.get_classes_for_term(term_sourced_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling ClassesManagementApi->get_classes_for_term: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::ClassesManagementApi.new
+api_instance = OneRosterClient::ClassesManagementApi.new
 user_sourced_id = 'user_sourced_id_example' # String | ...tbd...
 opts = { 
   limit: 100, # Integer | To define the download segmentation value i.e. the maximum number of records to be contained in the response.
@@ -357,16 +357,16 @@ begin
   #The REST read request message for the getClassesForUser() API call.
   result = api_instance.get_classes_for_user(user_sourced_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling ClassesManagementApi->get_classes_for_user: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::CoursesManagementApi.new
+api_instance = OneRosterClient::CoursesManagementApi.new
 sourced_id = 'sourced_id_example' # String | The unique identifier for this course.
 
 
@@ -374,16 +374,16 @@ begin
   #The REST read request message for the getCourse() API call.
   result = api_instance.get_course(sourced_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling CoursesManagementApi->get_course: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::CoursesManagementApi.new
+api_instance = OneRosterClient::CoursesManagementApi.new
 opts = { 
   limit: 100, # Integer | To define the download segmentation value i.e. the maximum number of records to be contained in the response.
   offset: 0, # Integer | The number of the first record to be supplied in the segmented response message.
@@ -398,16 +398,16 @@ begin
   #The REST read request message for the getCourses() API call.
   result = api_instance.get_courses(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling CoursesManagementApi->get_courses: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::CoursesManagementApi.new
+api_instance = OneRosterClient::CoursesManagementApi.new
 school_sourced_id = 'school_sourced_id_example' # String | ...tbd...
 opts = { 
   limit: 100, # Integer | To define the download segmentation value i.e. the maximum number of records to be contained in the response.
@@ -423,16 +423,16 @@ begin
   #The REST read request message for the getCoursesForSchool() API call.
   result = api_instance.get_courses_for_school(school_sourced_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling CoursesManagementApi->get_courses_for_school: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::DemographicsManagementApi.new
+api_instance = OneRosterClient::DemographicsManagementApi.new
 sourced_id = 'sourced_id_example' # String | ...tbd...
 
 
@@ -440,16 +440,16 @@ begin
   #The REST read request message for the getDemographic() API call.
   result = api_instance.get_demographic(sourced_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling DemographicsManagementApi->get_demographic: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::DemographicsManagementApi.new
+api_instance = OneRosterClient::DemographicsManagementApi.new
 opts = { 
   limit: 100, # Integer | To define the download segmentation value i.e. the maximum number of records to be contained in the response.
   offset: 0, # Integer | The number of the first record to be supplied in the segmented response message.
@@ -464,16 +464,16 @@ begin
   #The REST read request message for the getDemographics() API call.
   result = api_instance.get_demographics(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling DemographicsManagementApi->get_demographics: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::EnrollmentsManagementApi.new
+api_instance = OneRosterClient::EnrollmentsManagementApi.new
 sourced_id = 'sourced_id_example' # String | ...tbd...
 
 
@@ -481,16 +481,16 @@ begin
   #The REST read request message for the getEnrollment() API call.
   result = api_instance.get_enrollment(sourced_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling EnrollmentsManagementApi->get_enrollment: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::EnrollmentsManagementApi.new
+api_instance = OneRosterClient::EnrollmentsManagementApi.new
 opts = { 
   limit: 100, # Integer | To define the download segmentation value i.e. the maximum number of records to be contained in the response.
   offset: 0, # Integer | The number of the first record to be supplied in the segmented response message.
@@ -505,16 +505,16 @@ begin
   #The REST read request message for the getEnrollments() API call.
   result = api_instance.get_enrollments(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling EnrollmentsManagementApi->get_enrollments: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::EnrollmentsManagementApi.new
+api_instance = OneRosterClient::EnrollmentsManagementApi.new
 school_sourced_id = 'school_sourced_id_example' # String | ...tbd...
 class_sourced_id = 'class_sourced_id_example' # String | ...tbd...
 opts = { 
@@ -531,16 +531,16 @@ begin
   #The REST read request message for the getEnrollmentsForClassInSchool() API call.
   result = api_instance.get_enrollments_for_class_in_school(school_sourced_id, class_sourced_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling EnrollmentsManagementApi->get_enrollments_for_class_in_school: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::EnrollmentsManagementApi.new
+api_instance = OneRosterClient::EnrollmentsManagementApi.new
 school_sourced_id = 'school_sourced_id_example' # String | ...tbd...
 opts = { 
   limit: 100, # Integer | To define the download segmentation value i.e. the maximum number of records to be contained in the response.
@@ -556,16 +556,16 @@ begin
   #The REST read request message for the getEnrollmentsForSchool() API call.
   result = api_instance.get_enrollments_for_school(school_sourced_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling EnrollmentsManagementApi->get_enrollments_for_school: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::GradingPeriodsManagementApi.new
+api_instance = OneRosterClient::GradingPeriodsManagementApi.new
 sourced_id = 'sourced_id_example' # String | ...tbd...
 
 
@@ -573,16 +573,16 @@ begin
   #The REST read request message for the getGradingPeriod() API call.
   result = api_instance.get_grading_period(sourced_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling GradingPeriodsManagementApi->get_grading_period: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::GradingPeriodsManagementApi.new
+api_instance = OneRosterClient::GradingPeriodsManagementApi.new
 opts = { 
   limit: 100, # Integer | To define the download segmentation value i.e. the maximum number of records to be contained in the response.
   offset: 0, # Integer | The number of the first record to be supplied in the segmented response message.
@@ -597,16 +597,16 @@ begin
   #The REST read request message for the getGradingPeriods() API call.
   result = api_instance.get_grading_periods(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling GradingPeriodsManagementApi->get_grading_periods: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::GradingPeriodsManagementApi.new
+api_instance = OneRosterClient::GradingPeriodsManagementApi.new
 term_sourced_id = 'term_sourced_id_example' # String | ...tbd...
 opts = { 
   limit: 100, # Integer | To define the download segmentation value i.e. the maximum number of records to be contained in the response.
@@ -622,32 +622,32 @@ begin
   #The REST read request message for the getGradingPeriodsForTerm() API call.
   result = api_instance.get_grading_periods_for_term(term_sourced_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling GradingPeriodsManagementApi->get_grading_periods_for_term: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::LineItemsManagementApi.new
+api_instance = OneRosterClient::LineItemsManagementApi.new
 sourced_id = 'sourced_id_example' # String | ...tbd...
 
 
 begin
   #The REST delete request message for the deleteLineItem() API call.
   api_instance.delete_line_item(sourced_id)
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling LineItemsManagementApi->delete_line_item: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::LineItemsManagementApi.new
+api_instance = OneRosterClient::LineItemsManagementApi.new
 sourced_id = 'sourced_id_example' # String | ...tbd...
 
 
@@ -655,16 +655,16 @@ begin
   #The REST read request message for the getLineItem() API call.
   result = api_instance.get_line_item(sourced_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling LineItemsManagementApi->get_line_item: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::LineItemsManagementApi.new
+api_instance = OneRosterClient::LineItemsManagementApi.new
 opts = { 
   limit: 100, # Integer | To define the download segmentation value i.e. the maximum number of records to be contained in the response.
   offset: 0, # Integer | The number of the first record to be supplied in the segmented response message.
@@ -679,16 +679,16 @@ begin
   #The REST read request message for the getLineItems() API call.
   result = api_instance.get_line_items(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling LineItemsManagementApi->get_line_items: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::LineItemsManagementApi.new
+api_instance = OneRosterClient::LineItemsManagementApi.new
 class_sourced_id = 'class_sourced_id_example' # String | ...tbd...
 opts = { 
   limit: 100, # Integer | To define the download segmentation value i.e. the maximum number of records to be contained in the response.
@@ -704,33 +704,33 @@ begin
   #The REST read request message for the getLineItemsForClass() API call.
   result = api_instance.get_line_items_for_class(class_sourced_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling LineItemsManagementApi->get_line_items_for_class: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::LineItemsManagementApi.new
-body = SwaggerClient::SingleLineItemType.new # SingleLineItemType | ...tbd...
+api_instance = OneRosterClient::LineItemsManagementApi.new
+body = OneRosterClient::SingleLineItemType.new # SingleLineItemType | ...tbd...
 sourced_id = 'sourced_id_example' # String | ...tbd...
 
 
 begin
   #The REST create request message for the putLineItem() API call.
   api_instance.put_line_item(body, sourced_id)
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling LineItemsManagementApi->put_line_item: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::OrgsManagementApi.new
+api_instance = OneRosterClient::OrgsManagementApi.new
 sourced_id = 'sourced_id_example' # String | ...tbd...
 
 
@@ -738,16 +738,16 @@ begin
   #The REST read request message for the getOrg() API call.
   result = api_instance.get_org(sourced_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling OrgsManagementApi->get_org: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::OrgsManagementApi.new
+api_instance = OneRosterClient::OrgsManagementApi.new
 opts = { 
   limit: 100, # Integer | To define the download segmentation value i.e. the maximum number of records to be contained in the response.
   offset: 0, # Integer | The number of the first record to be supplied in the segmented response message.
@@ -762,16 +762,16 @@ begin
   #The REST read request message for the getOrgs() API call.
   result = api_instance.get_orgs(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling OrgsManagementApi->get_orgs: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::ResourcesManagementApi.new
+api_instance = OneRosterClient::ResourcesManagementApi.new
 sourced_id = 'sourced_id_example' # String | ...tbd...
 
 
@@ -779,16 +779,16 @@ begin
   #The REST read request message for the getResource() API call.
   result = api_instance.get_resource(sourced_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling ResourcesManagementApi->get_resource: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::ResourcesManagementApi.new
+api_instance = OneRosterClient::ResourcesManagementApi.new
 opts = { 
   limit: 100, # Integer | To define the download segmentation value i.e. the maximum number of records to be contained in the response.
   offset: 0, # Integer | The number of the first record to be supplied in the segmented response message.
@@ -803,16 +803,16 @@ begin
   #The REST read request message for the getResources() API call.
   result = api_instance.get_resources(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling ResourcesManagementApi->get_resources: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::ResourcesManagementApi.new
+api_instance = OneRosterClient::ResourcesManagementApi.new
 class_sourced_id = 'class_sourced_id_example' # String | ...tbd...
 opts = { 
   limit: 100, # Integer | To define the download segmentation value i.e. the maximum number of records to be contained in the response.
@@ -828,16 +828,16 @@ begin
   #The REST read request message for the getResourcesForClass() API call.
   result = api_instance.get_resources_for_class(class_sourced_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling ResourcesManagementApi->get_resources_for_class: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::ResourcesManagementApi.new
+api_instance = OneRosterClient::ResourcesManagementApi.new
 course_sourced_id = 'course_sourced_id_example' # String | ...tbd...
 opts = { 
   limit: 100, # Integer | To define the download segmentation value i.e. the maximum number of records to be contained in the response.
@@ -853,32 +853,32 @@ begin
   #The REST read request message for the getResourcesForCourse() API call.
   result = api_instance.get_resources_for_course(course_sourced_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling ResourcesManagementApi->get_resources_for_course: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::ResultsManagementApi.new
+api_instance = OneRosterClient::ResultsManagementApi.new
 sourced_id = 'sourced_id_example' # String | ...tbd...
 
 
 begin
   #The REST delete request message for the deleteResult() API call.
   api_instance.delete_result(sourced_id)
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling ResultsManagementApi->delete_result: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::ResultsManagementApi.new
+api_instance = OneRosterClient::ResultsManagementApi.new
 sourced_id = 'sourced_id_example' # String | ...tbd...
 
 
@@ -886,16 +886,16 @@ begin
   #The REST read request message for the getResult() API call.
   result = api_instance.get_result(sourced_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling ResultsManagementApi->get_result: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::ResultsManagementApi.new
+api_instance = OneRosterClient::ResultsManagementApi.new
 opts = { 
   limit: 100, # Integer | To define the download segmentation value i.e. the maximum number of records to be contained in the response.
   offset: 0, # Integer | The number of the first record to be supplied in the segmented response message.
@@ -910,16 +910,16 @@ begin
   #The REST read request message for the getResults() API call.
   result = api_instance.get_results(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling ResultsManagementApi->get_results: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::ResultsManagementApi.new
+api_instance = OneRosterClient::ResultsManagementApi.new
 class_sourced_id = 'class_sourced_id_example' # String | ...tbd...
 opts = { 
   limit: 100, # Integer | To define the download segmentation value i.e. the maximum number of records to be contained in the response.
@@ -935,16 +935,16 @@ begin
   #The REST read request message for the getResultsForClass() API call.
   result = api_instance.get_results_for_class(class_sourced_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling ResultsManagementApi->get_results_for_class: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::ResultsManagementApi.new
+api_instance = OneRosterClient::ResultsManagementApi.new
 class_sourced_id = 'class_sourced_id_example' # String | ...tbd...
 line_item_sourced_id = 'line_item_sourced_id_example' # String | ...tbd...
 opts = { 
@@ -961,16 +961,16 @@ begin
   #The REST read request message for the getResultsForLineItemForClass() API call.
   result = api_instance.get_results_for_line_item_for_class(class_sourced_id, line_item_sourced_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling ResultsManagementApi->get_results_for_line_item_for_class: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::ResultsManagementApi.new
+api_instance = OneRosterClient::ResultsManagementApi.new
 class_sourced_id = 'class_sourced_id_example' # String | ...tbd...
 student_sourced_id = 'student_sourced_id_example' # String | ...tbd...
 opts = { 
@@ -987,33 +987,33 @@ begin
   #The REST read request message for the getResultsForStudentForClass() API call.
   result = api_instance.get_results_for_student_for_class(class_sourced_id, student_sourced_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling ResultsManagementApi->get_results_for_student_for_class: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::ResultsManagementApi.new
-body = SwaggerClient::SingleResultType.new # SingleResultType | ...tbd...
+api_instance = OneRosterClient::ResultsManagementApi.new
+body = OneRosterClient::SingleResultType.new # SingleResultType | ...tbd...
 sourced_id = 'sourced_id_example' # String | ...tbd...
 
 
 begin
   #The REST create request message for the putResult() API call.
   api_instance.put_result(body, sourced_id)
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling ResultsManagementApi->put_result: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::SchoolsManagementApi.new
+api_instance = OneRosterClient::SchoolsManagementApi.new
 sourced_id = 'sourced_id_example' # String | ...tbd...
 
 
@@ -1021,16 +1021,16 @@ begin
   #The REST read request message for the getSchool() API call.
   result = api_instance.get_school(sourced_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling SchoolsManagementApi->get_school: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::SchoolsManagementApi.new
+api_instance = OneRosterClient::SchoolsManagementApi.new
 opts = { 
   limit: 100, # Integer | To define the download segmentation value i.e. the maximum number of records to be contained in the response.
   offset: 0, # Integer | The number of the first record to be supplied in the segmented response message.
@@ -1045,16 +1045,16 @@ begin
   #The REST read request message for the getSchools() API call.
   result = api_instance.get_schools(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling SchoolsManagementApi->get_schools: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::StudentsManagementApi.new
+api_instance = OneRosterClient::StudentsManagementApi.new
 sourced_id = 'sourced_id_example' # String | ...tbd...
 
 
@@ -1062,16 +1062,16 @@ begin
   #The REST read request message for the getStudent() API call.
   result = api_instance.get_student(sourced_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling StudentsManagementApi->get_student: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::StudentsManagementApi.new
+api_instance = OneRosterClient::StudentsManagementApi.new
 opts = { 
   limit: 100, # Integer | To define the download segmentation value i.e. the maximum number of records to be contained in the response.
   offset: 0, # Integer | The number of the first record to be supplied in the segmented response message.
@@ -1086,16 +1086,16 @@ begin
   #The REST read request message for the getStudents() API call.
   result = api_instance.get_students(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling StudentsManagementApi->get_students: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::StudentsManagementApi.new
+api_instance = OneRosterClient::StudentsManagementApi.new
 class_sourced_id = 'class_sourced_id_example' # String | ...tbd...
 opts = { 
   limit: 100, # Integer | To define the download segmentation value i.e. the maximum number of records to be contained in the response.
@@ -1111,16 +1111,16 @@ begin
   #The REST read request message for the getStudentsForClass() API call.
   result = api_instance.get_students_for_class(class_sourced_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling StudentsManagementApi->get_students_for_class: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::StudentsManagementApi.new
+api_instance = OneRosterClient::StudentsManagementApi.new
 school_sourced_id = 'school_sourced_id_example' # String | ...tbd...
 class_sourced_id = 'class_sourced_id_example' # String | ...tbd...
 opts = { 
@@ -1137,16 +1137,16 @@ begin
   #The REST read request message for the getStudentsForClassInSchool() API call.
   result = api_instance.get_students_for_class_in_school(school_sourced_id, class_sourced_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling StudentsManagementApi->get_students_for_class_in_school: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::StudentsManagementApi.new
+api_instance = OneRosterClient::StudentsManagementApi.new
 school_sourced_id = 'school_sourced_id_example' # String | ...tbd...
 opts = { 
   limit: 100, # Integer | To define the download segmentation value i.e. the maximum number of records to be contained in the response.
@@ -1162,16 +1162,16 @@ begin
   #The REST read request message for the getStudentsForSchool() API call.
   result = api_instance.get_students_for_school(school_sourced_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling StudentsManagementApi->get_students_for_school: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::TeachersManagementApi.new
+api_instance = OneRosterClient::TeachersManagementApi.new
 sourced_id = 'sourced_id_example' # String | ...tbd...
 
 
@@ -1179,16 +1179,16 @@ begin
   #The REST read request message for the getTeacher() API call.
   result = api_instance.get_teacher(sourced_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling TeachersManagementApi->get_teacher: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::TeachersManagementApi.new
+api_instance = OneRosterClient::TeachersManagementApi.new
 opts = { 
   limit: 100, # Integer | To define the download segmentation value i.e. the maximum number of records to be contained in the response.
   offset: 0, # Integer | The number of the first record to be supplied in the segmented response message.
@@ -1203,16 +1203,16 @@ begin
   #The REST read request message for the getTeachers() API call.
   result = api_instance.get_teachers(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling TeachersManagementApi->get_teachers: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::TeachersManagementApi.new
+api_instance = OneRosterClient::TeachersManagementApi.new
 class_sourced_id = 'class_sourced_id_example' # String | ...tbd...
 opts = { 
   limit: 100, # Integer | To define the download segmentation value i.e. the maximum number of records to be contained in the response.
@@ -1228,16 +1228,16 @@ begin
   #The REST read request message for the getTeachersForClass() API call.
   result = api_instance.get_teachers_for_class(class_sourced_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling TeachersManagementApi->get_teachers_for_class: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::TeachersManagementApi.new
+api_instance = OneRosterClient::TeachersManagementApi.new
 school_sourced_id = 'school_sourced_id_example' # String | ...tbd...
 class_sourced_id = 'class_sourced_id_example' # String | ...tbd...
 opts = { 
@@ -1254,16 +1254,16 @@ begin
   #The REST read request message for the getTeachersForClassInSchool() API call.
   result = api_instance.get_teachers_for_class_in_school(school_sourced_id, class_sourced_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling TeachersManagementApi->get_teachers_for_class_in_school: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::TeachersManagementApi.new
+api_instance = OneRosterClient::TeachersManagementApi.new
 school_sourced_id = 'school_sourced_id_example' # String | ...tbd...
 opts = { 
   limit: 100, # Integer | To define the download segmentation value i.e. the maximum number of records to be contained in the response.
@@ -1279,16 +1279,16 @@ begin
   #The REST read request message for the getTeachersForSchool() API call.
   result = api_instance.get_teachers_for_school(school_sourced_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling TeachersManagementApi->get_teachers_for_school: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::TermsManagementApi.new
+api_instance = OneRosterClient::TermsManagementApi.new
 sourced_id = 'sourced_id_example' # String | ...tbd...
 
 
@@ -1296,16 +1296,16 @@ begin
   #The REST read request message for the getTerm() API call.
   result = api_instance.get_term(sourced_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling TermsManagementApi->get_term: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::TermsManagementApi.new
+api_instance = OneRosterClient::TermsManagementApi.new
 opts = { 
   limit: 100, # Integer | To define the download segmentation value i.e. the maximum number of records to be contained in the response.
   offset: 0, # Integer | The number of the first record to be supplied in the segmented response message.
@@ -1320,16 +1320,16 @@ begin
   #The REST read request message for the getTerms() API call.
   result = api_instance.get_terms(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling TermsManagementApi->get_terms: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::TermsManagementApi.new
+api_instance = OneRosterClient::TermsManagementApi.new
 school_sourced_id = 'school_sourced_id_example' # String | ...tbd...
 opts = { 
   limit: 100, # Integer | To define the download segmentation value i.e. the maximum number of records to be contained in the response.
@@ -1345,16 +1345,16 @@ begin
   #The REST read request message for the getTermsForSchool() API call.
   result = api_instance.get_terms_for_school(school_sourced_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling TermsManagementApi->get_terms_for_school: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::UsersManagementApi.new
+api_instance = OneRosterClient::UsersManagementApi.new
 sourced_id = 'sourced_id_example' # String | ...tbd...
 
 
@@ -1362,16 +1362,16 @@ begin
   #The REST read request message for the getUser() API call.
   result = api_instance.get_user(sourced_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling UsersManagementApi->get_user: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::UsersManagementApi.new
+api_instance = OneRosterClient::UsersManagementApi.new
 opts = { 
   limit: 100, # Integer | To define the download segmentation value i.e. the maximum number of records to be contained in the response.
   offset: 0, # Integer | The number of the first record to be supplied in the segmented response message.
@@ -1386,7 +1386,7 @@ begin
   #The REST read request message for the getUsers() API call.
   result = api_instance.get_users(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling UsersManagementApi->get_users: #{e}"
 end
 ```
@@ -1397,123 +1397,123 @@ All URIs are relative to */*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*SwaggerClient::AcademicSessionsManagementApi* | [**get_academic_session**](docs/AcademicSessionsManagementApi.md#get_academic_session) | **GET** /academicSessions/{sourcedId} | The REST read request message for the getAcademicSession() API call.
-*SwaggerClient::AcademicSessionsManagementApi* | [**get_academic_sessions**](docs/AcademicSessionsManagementApi.md#get_academic_sessions) | **GET** /academicSessions | The REST read request message for the getAcademicSessions() API call.
-*SwaggerClient::CategoriesManagementApi* | [**delete_category**](docs/CategoriesManagementApi.md#delete_category) | **DELETE** /categories/{sourcedId} | The REST delete request message for the deleteCategory() API call.
-*SwaggerClient::CategoriesManagementApi* | [**get_categories**](docs/CategoriesManagementApi.md#get_categories) | **GET** /categories | The REST read request message for the getCategories() API call.
-*SwaggerClient::CategoriesManagementApi* | [**get_category**](docs/CategoriesManagementApi.md#get_category) | **GET** /categories/{sourcedId} | The REST read request message for the getCategory() API call.
-*SwaggerClient::CategoriesManagementApi* | [**put_category**](docs/CategoriesManagementApi.md#put_category) | **PUT** /categories/{sourcedId} | The REST create request message for the putCategory() API call.
-*SwaggerClient::ClassesManagementApi* | [**get_class**](docs/ClassesManagementApi.md#get_class) | **GET** /classes/{sourcedId} | The REST read request message for the getClass() API call.
-*SwaggerClient::ClassesManagementApi* | [**get_classes**](docs/ClassesManagementApi.md#get_classes) | **GET** /classes | The REST read request message for the getClasses() API call.
-*SwaggerClient::ClassesManagementApi* | [**get_classes_for_course**](docs/ClassesManagementApi.md#get_classes_for_course) | **GET** /courses/{courseSourcedId}/classes | The REST read request message for the getClassesForCourse() API call.
-*SwaggerClient::ClassesManagementApi* | [**get_classes_for_school**](docs/ClassesManagementApi.md#get_classes_for_school) | **GET** /schools/{schoolSourcedId}/classes | The REST read request message for the getClassesForSchool() API call.
-*SwaggerClient::ClassesManagementApi* | [**get_classes_for_student**](docs/ClassesManagementApi.md#get_classes_for_student) | **GET** /students/{studentSourcedId}/classes | The REST read request message for the getClassesForStudent() API call.
-*SwaggerClient::ClassesManagementApi* | [**get_classes_for_teacher**](docs/ClassesManagementApi.md#get_classes_for_teacher) | **GET** /teachers/{teacherSourcedId}/classes | The REST read request message for the getClassesForTeacher() API call.
-*SwaggerClient::ClassesManagementApi* | [**get_classes_for_term**](docs/ClassesManagementApi.md#get_classes_for_term) | **GET** /terms/{termSourcedId}/classes | The REST read request message for the getClassesForTerm() API call.
-*SwaggerClient::ClassesManagementApi* | [**get_classes_for_user**](docs/ClassesManagementApi.md#get_classes_for_user) | **GET** /users/{userSourcedId}/classes | The REST read request message for the getClassesForUser() API call.
-*SwaggerClient::CoursesManagementApi* | [**get_course**](docs/CoursesManagementApi.md#get_course) | **GET** /courses/{sourcedId} | The REST read request message for the getCourse() API call.
-*SwaggerClient::CoursesManagementApi* | [**get_courses**](docs/CoursesManagementApi.md#get_courses) | **GET** /courses | The REST read request message for the getCourses() API call.
-*SwaggerClient::CoursesManagementApi* | [**get_courses_for_school**](docs/CoursesManagementApi.md#get_courses_for_school) | **GET** /schools/{schoolSourcedId}/courses | The REST read request message for the getCoursesForSchool() API call.
-*SwaggerClient::DemographicsManagementApi* | [**get_demographic**](docs/DemographicsManagementApi.md#get_demographic) | **GET** /demographics/{sourcedId} | The REST read request message for the getDemographic() API call.
-*SwaggerClient::DemographicsManagementApi* | [**get_demographics**](docs/DemographicsManagementApi.md#get_demographics) | **GET** /demographics | The REST read request message for the getDemographics() API call.
-*SwaggerClient::EnrollmentsManagementApi* | [**get_enrollment**](docs/EnrollmentsManagementApi.md#get_enrollment) | **GET** /enrollments/{sourcedId} | The REST read request message for the getEnrollment() API call.
-*SwaggerClient::EnrollmentsManagementApi* | [**get_enrollments**](docs/EnrollmentsManagementApi.md#get_enrollments) | **GET** /enrollments | The REST read request message for the getEnrollments() API call.
-*SwaggerClient::EnrollmentsManagementApi* | [**get_enrollments_for_class_in_school**](docs/EnrollmentsManagementApi.md#get_enrollments_for_class_in_school) | **GET** /schools/{schoolSourcedId}/classes/{classSourcedId}/enrollments | The REST read request message for the getEnrollmentsForClassInSchool() API call.
-*SwaggerClient::EnrollmentsManagementApi* | [**get_enrollments_for_school**](docs/EnrollmentsManagementApi.md#get_enrollments_for_school) | **GET** /schools/{schoolSourcedId}/enrollments | The REST read request message for the getEnrollmentsForSchool() API call.
-*SwaggerClient::GradingPeriodsManagementApi* | [**get_grading_period**](docs/GradingPeriodsManagementApi.md#get_grading_period) | **GET** /gradingPeriods/{sourcedId} | The REST read request message for the getGradingPeriod() API call.
-*SwaggerClient::GradingPeriodsManagementApi* | [**get_grading_periods**](docs/GradingPeriodsManagementApi.md#get_grading_periods) | **GET** /gradingPeriods | The REST read request message for the getGradingPeriods() API call.
-*SwaggerClient::GradingPeriodsManagementApi* | [**get_grading_periods_for_term**](docs/GradingPeriodsManagementApi.md#get_grading_periods_for_term) | **GET** /terms/{termSourcedId}/gradingPeriods | The REST read request message for the getGradingPeriodsForTerm() API call.
-*SwaggerClient::LineItemsManagementApi* | [**delete_line_item**](docs/LineItemsManagementApi.md#delete_line_item) | **DELETE** /lineItems/{sourcedId} | The REST delete request message for the deleteLineItem() API call.
-*SwaggerClient::LineItemsManagementApi* | [**get_line_item**](docs/LineItemsManagementApi.md#get_line_item) | **GET** /lineItems/{sourcedId} | The REST read request message for the getLineItem() API call.
-*SwaggerClient::LineItemsManagementApi* | [**get_line_items**](docs/LineItemsManagementApi.md#get_line_items) | **GET** /lineItems | The REST read request message for the getLineItems() API call.
-*SwaggerClient::LineItemsManagementApi* | [**get_line_items_for_class**](docs/LineItemsManagementApi.md#get_line_items_for_class) | **GET** /classes/{classSourcedId}/lineItems | The REST read request message for the getLineItemsForClass() API call.
-*SwaggerClient::LineItemsManagementApi* | [**put_line_item**](docs/LineItemsManagementApi.md#put_line_item) | **PUT** /lineItems/{sourcedId} | The REST create request message for the putLineItem() API call.
-*SwaggerClient::OrgsManagementApi* | [**get_org**](docs/OrgsManagementApi.md#get_org) | **GET** /orgs/{sourcedId} | The REST read request message for the getOrg() API call.
-*SwaggerClient::OrgsManagementApi* | [**get_orgs**](docs/OrgsManagementApi.md#get_orgs) | **GET** /orgs | The REST read request message for the getOrgs() API call.
-*SwaggerClient::ResourcesManagementApi* | [**get_resource**](docs/ResourcesManagementApi.md#get_resource) | **GET** /resources/{sourcedId} | The REST read request message for the getResource() API call.
-*SwaggerClient::ResourcesManagementApi* | [**get_resources**](docs/ResourcesManagementApi.md#get_resources) | **GET** /resources | The REST read request message for the getResources() API call.
-*SwaggerClient::ResourcesManagementApi* | [**get_resources_for_class**](docs/ResourcesManagementApi.md#get_resources_for_class) | **GET** /classes/{classSourcedId}/resources | The REST read request message for the getResourcesForClass() API call.
-*SwaggerClient::ResourcesManagementApi* | [**get_resources_for_course**](docs/ResourcesManagementApi.md#get_resources_for_course) | **GET** /courses/{courseSourcedId}/resources | The REST read request message for the getResourcesForCourse() API call.
-*SwaggerClient::ResultsManagementApi* | [**delete_result**](docs/ResultsManagementApi.md#delete_result) | **DELETE** /results/{sourcedId} | The REST delete request message for the deleteResult() API call.
-*SwaggerClient::ResultsManagementApi* | [**get_result**](docs/ResultsManagementApi.md#get_result) | **GET** /results/{sourcedId} | The REST read request message for the getResult() API call.
-*SwaggerClient::ResultsManagementApi* | [**get_results**](docs/ResultsManagementApi.md#get_results) | **GET** /results | The REST read request message for the getResults() API call.
-*SwaggerClient::ResultsManagementApi* | [**get_results_for_class**](docs/ResultsManagementApi.md#get_results_for_class) | **GET** /classes/{classSourcedId}/results | The REST read request message for the getResultsForClass() API call.
-*SwaggerClient::ResultsManagementApi* | [**get_results_for_line_item_for_class**](docs/ResultsManagementApi.md#get_results_for_line_item_for_class) | **GET** /classes/{classSourcedId}/lineItems/{lineItemSourcedId}/results | The REST read request message for the getResultsForLineItemForClass() API call.
-*SwaggerClient::ResultsManagementApi* | [**get_results_for_student_for_class**](docs/ResultsManagementApi.md#get_results_for_student_for_class) | **GET** /classes/{classSourcedId}/students/{studentSourcedId}/results | The REST read request message for the getResultsForStudentForClass() API call.
-*SwaggerClient::ResultsManagementApi* | [**put_result**](docs/ResultsManagementApi.md#put_result) | **PUT** /results/{sourcedId} | The REST create request message for the putResult() API call.
-*SwaggerClient::SchoolsManagementApi* | [**get_school**](docs/SchoolsManagementApi.md#get_school) | **GET** /schools/{sourcedId} | The REST read request message for the getSchool() API call.
-*SwaggerClient::SchoolsManagementApi* | [**get_schools**](docs/SchoolsManagementApi.md#get_schools) | **GET** /schools | The REST read request message for the getSchools() API call.
-*SwaggerClient::StudentsManagementApi* | [**get_student**](docs/StudentsManagementApi.md#get_student) | **GET** /students/{sourcedId} | The REST read request message for the getStudent() API call.
-*SwaggerClient::StudentsManagementApi* | [**get_students**](docs/StudentsManagementApi.md#get_students) | **GET** /students | The REST read request message for the getStudents() API call.
-*SwaggerClient::StudentsManagementApi* | [**get_students_for_class**](docs/StudentsManagementApi.md#get_students_for_class) | **GET** /classes/{classSourcedId}/students | The REST read request message for the getStudentsForClass() API call.
-*SwaggerClient::StudentsManagementApi* | [**get_students_for_class_in_school**](docs/StudentsManagementApi.md#get_students_for_class_in_school) | **GET** /schools/{schoolSourcedId}/classes/{classSourcedId}/students | The REST read request message for the getStudentsForClassInSchool() API call.
-*SwaggerClient::StudentsManagementApi* | [**get_students_for_school**](docs/StudentsManagementApi.md#get_students_for_school) | **GET** /schools/{schoolSourcedId}/students | The REST read request message for the getStudentsForSchool() API call.
-*SwaggerClient::TeachersManagementApi* | [**get_teacher**](docs/TeachersManagementApi.md#get_teacher) | **GET** /teachers/{sourcedId} | The REST read request message for the getTeacher() API call.
-*SwaggerClient::TeachersManagementApi* | [**get_teachers**](docs/TeachersManagementApi.md#get_teachers) | **GET** /teachers | The REST read request message for the getTeachers() API call.
-*SwaggerClient::TeachersManagementApi* | [**get_teachers_for_class**](docs/TeachersManagementApi.md#get_teachers_for_class) | **GET** /classes/{classSourcedId}/teachers | The REST read request message for the getTeachersForClass() API call.
-*SwaggerClient::TeachersManagementApi* | [**get_teachers_for_class_in_school**](docs/TeachersManagementApi.md#get_teachers_for_class_in_school) | **GET** /schools/{schoolSourcedId}/classes/{classSourcedId}/teachers | The REST read request message for the getTeachersForClassInSchool() API call.
-*SwaggerClient::TeachersManagementApi* | [**get_teachers_for_school**](docs/TeachersManagementApi.md#get_teachers_for_school) | **GET** /schools/{schoolSourcedId}/teachers | The REST read request message for the getTeachersForSchool() API call.
-*SwaggerClient::TermsManagementApi* | [**get_term**](docs/TermsManagementApi.md#get_term) | **GET** /terms/{sourcedId} | The REST read request message for the getTerm() API call.
-*SwaggerClient::TermsManagementApi* | [**get_terms**](docs/TermsManagementApi.md#get_terms) | **GET** /terms | The REST read request message for the getTerms() API call.
-*SwaggerClient::TermsManagementApi* | [**get_terms_for_school**](docs/TermsManagementApi.md#get_terms_for_school) | **GET** /schools/{schoolSourcedId}/terms | The REST read request message for the getTermsForSchool() API call.
-*SwaggerClient::UsersManagementApi* | [**get_user**](docs/UsersManagementApi.md#get_user) | **GET** /users/{sourcedId} | The REST read request message for the getUser() API call.
-*SwaggerClient::UsersManagementApi* | [**get_users**](docs/UsersManagementApi.md#get_users) | **GET** /users | The REST read request message for the getUsers() API call.
+*OneRosterClient::AcademicSessionsManagementApi* | [**get_academic_session**](docs/AcademicSessionsManagementApi.md#get_academic_session) | **GET** /academicSessions/{sourcedId} | The REST read request message for the getAcademicSession() API call.
+*OneRosterClient::AcademicSessionsManagementApi* | [**get_academic_sessions**](docs/AcademicSessionsManagementApi.md#get_academic_sessions) | **GET** /academicSessions | The REST read request message for the getAcademicSessions() API call.
+*OneRosterClient::CategoriesManagementApi* | [**delete_category**](docs/CategoriesManagementApi.md#delete_category) | **DELETE** /categories/{sourcedId} | The REST delete request message for the deleteCategory() API call.
+*OneRosterClient::CategoriesManagementApi* | [**get_categories**](docs/CategoriesManagementApi.md#get_categories) | **GET** /categories | The REST read request message for the getCategories() API call.
+*OneRosterClient::CategoriesManagementApi* | [**get_category**](docs/CategoriesManagementApi.md#get_category) | **GET** /categories/{sourcedId} | The REST read request message for the getCategory() API call.
+*OneRosterClient::CategoriesManagementApi* | [**put_category**](docs/CategoriesManagementApi.md#put_category) | **PUT** /categories/{sourcedId} | The REST create request message for the putCategory() API call.
+*OneRosterClient::ClassesManagementApi* | [**get_class**](docs/ClassesManagementApi.md#get_class) | **GET** /classes/{sourcedId} | The REST read request message for the getClass() API call.
+*OneRosterClient::ClassesManagementApi* | [**get_classes**](docs/ClassesManagementApi.md#get_classes) | **GET** /classes | The REST read request message for the getClasses() API call.
+*OneRosterClient::ClassesManagementApi* | [**get_classes_for_course**](docs/ClassesManagementApi.md#get_classes_for_course) | **GET** /courses/{courseSourcedId}/classes | The REST read request message for the getClassesForCourse() API call.
+*OneRosterClient::ClassesManagementApi* | [**get_classes_for_school**](docs/ClassesManagementApi.md#get_classes_for_school) | **GET** /schools/{schoolSourcedId}/classes | The REST read request message for the getClassesForSchool() API call.
+*OneRosterClient::ClassesManagementApi* | [**get_classes_for_student**](docs/ClassesManagementApi.md#get_classes_for_student) | **GET** /students/{studentSourcedId}/classes | The REST read request message for the getClassesForStudent() API call.
+*OneRosterClient::ClassesManagementApi* | [**get_classes_for_teacher**](docs/ClassesManagementApi.md#get_classes_for_teacher) | **GET** /teachers/{teacherSourcedId}/classes | The REST read request message for the getClassesForTeacher() API call.
+*OneRosterClient::ClassesManagementApi* | [**get_classes_for_term**](docs/ClassesManagementApi.md#get_classes_for_term) | **GET** /terms/{termSourcedId}/classes | The REST read request message for the getClassesForTerm() API call.
+*OneRosterClient::ClassesManagementApi* | [**get_classes_for_user**](docs/ClassesManagementApi.md#get_classes_for_user) | **GET** /users/{userSourcedId}/classes | The REST read request message for the getClassesForUser() API call.
+*OneRosterClient::CoursesManagementApi* | [**get_course**](docs/CoursesManagementApi.md#get_course) | **GET** /courses/{sourcedId} | The REST read request message for the getCourse() API call.
+*OneRosterClient::CoursesManagementApi* | [**get_courses**](docs/CoursesManagementApi.md#get_courses) | **GET** /courses | The REST read request message for the getCourses() API call.
+*OneRosterClient::CoursesManagementApi* | [**get_courses_for_school**](docs/CoursesManagementApi.md#get_courses_for_school) | **GET** /schools/{schoolSourcedId}/courses | The REST read request message for the getCoursesForSchool() API call.
+*OneRosterClient::DemographicsManagementApi* | [**get_demographic**](docs/DemographicsManagementApi.md#get_demographic) | **GET** /demographics/{sourcedId} | The REST read request message for the getDemographic() API call.
+*OneRosterClient::DemographicsManagementApi* | [**get_demographics**](docs/DemographicsManagementApi.md#get_demographics) | **GET** /demographics | The REST read request message for the getDemographics() API call.
+*OneRosterClient::EnrollmentsManagementApi* | [**get_enrollment**](docs/EnrollmentsManagementApi.md#get_enrollment) | **GET** /enrollments/{sourcedId} | The REST read request message for the getEnrollment() API call.
+*OneRosterClient::EnrollmentsManagementApi* | [**get_enrollments**](docs/EnrollmentsManagementApi.md#get_enrollments) | **GET** /enrollments | The REST read request message for the getEnrollments() API call.
+*OneRosterClient::EnrollmentsManagementApi* | [**get_enrollments_for_class_in_school**](docs/EnrollmentsManagementApi.md#get_enrollments_for_class_in_school) | **GET** /schools/{schoolSourcedId}/classes/{classSourcedId}/enrollments | The REST read request message for the getEnrollmentsForClassInSchool() API call.
+*OneRosterClient::EnrollmentsManagementApi* | [**get_enrollments_for_school**](docs/EnrollmentsManagementApi.md#get_enrollments_for_school) | **GET** /schools/{schoolSourcedId}/enrollments | The REST read request message for the getEnrollmentsForSchool() API call.
+*OneRosterClient::GradingPeriodsManagementApi* | [**get_grading_period**](docs/GradingPeriodsManagementApi.md#get_grading_period) | **GET** /gradingPeriods/{sourcedId} | The REST read request message for the getGradingPeriod() API call.
+*OneRosterClient::GradingPeriodsManagementApi* | [**get_grading_periods**](docs/GradingPeriodsManagementApi.md#get_grading_periods) | **GET** /gradingPeriods | The REST read request message for the getGradingPeriods() API call.
+*OneRosterClient::GradingPeriodsManagementApi* | [**get_grading_periods_for_term**](docs/GradingPeriodsManagementApi.md#get_grading_periods_for_term) | **GET** /terms/{termSourcedId}/gradingPeriods | The REST read request message for the getGradingPeriodsForTerm() API call.
+*OneRosterClient::LineItemsManagementApi* | [**delete_line_item**](docs/LineItemsManagementApi.md#delete_line_item) | **DELETE** /lineItems/{sourcedId} | The REST delete request message for the deleteLineItem() API call.
+*OneRosterClient::LineItemsManagementApi* | [**get_line_item**](docs/LineItemsManagementApi.md#get_line_item) | **GET** /lineItems/{sourcedId} | The REST read request message for the getLineItem() API call.
+*OneRosterClient::LineItemsManagementApi* | [**get_line_items**](docs/LineItemsManagementApi.md#get_line_items) | **GET** /lineItems | The REST read request message for the getLineItems() API call.
+*OneRosterClient::LineItemsManagementApi* | [**get_line_items_for_class**](docs/LineItemsManagementApi.md#get_line_items_for_class) | **GET** /classes/{classSourcedId}/lineItems | The REST read request message for the getLineItemsForClass() API call.
+*OneRosterClient::LineItemsManagementApi* | [**put_line_item**](docs/LineItemsManagementApi.md#put_line_item) | **PUT** /lineItems/{sourcedId} | The REST create request message for the putLineItem() API call.
+*OneRosterClient::OrgsManagementApi* | [**get_org**](docs/OrgsManagementApi.md#get_org) | **GET** /orgs/{sourcedId} | The REST read request message for the getOrg() API call.
+*OneRosterClient::OrgsManagementApi* | [**get_orgs**](docs/OrgsManagementApi.md#get_orgs) | **GET** /orgs | The REST read request message for the getOrgs() API call.
+*OneRosterClient::ResourcesManagementApi* | [**get_resource**](docs/ResourcesManagementApi.md#get_resource) | **GET** /resources/{sourcedId} | The REST read request message for the getResource() API call.
+*OneRosterClient::ResourcesManagementApi* | [**get_resources**](docs/ResourcesManagementApi.md#get_resources) | **GET** /resources | The REST read request message for the getResources() API call.
+*OneRosterClient::ResourcesManagementApi* | [**get_resources_for_class**](docs/ResourcesManagementApi.md#get_resources_for_class) | **GET** /classes/{classSourcedId}/resources | The REST read request message for the getResourcesForClass() API call.
+*OneRosterClient::ResourcesManagementApi* | [**get_resources_for_course**](docs/ResourcesManagementApi.md#get_resources_for_course) | **GET** /courses/{courseSourcedId}/resources | The REST read request message for the getResourcesForCourse() API call.
+*OneRosterClient::ResultsManagementApi* | [**delete_result**](docs/ResultsManagementApi.md#delete_result) | **DELETE** /results/{sourcedId} | The REST delete request message for the deleteResult() API call.
+*OneRosterClient::ResultsManagementApi* | [**get_result**](docs/ResultsManagementApi.md#get_result) | **GET** /results/{sourcedId} | The REST read request message for the getResult() API call.
+*OneRosterClient::ResultsManagementApi* | [**get_results**](docs/ResultsManagementApi.md#get_results) | **GET** /results | The REST read request message for the getResults() API call.
+*OneRosterClient::ResultsManagementApi* | [**get_results_for_class**](docs/ResultsManagementApi.md#get_results_for_class) | **GET** /classes/{classSourcedId}/results | The REST read request message for the getResultsForClass() API call.
+*OneRosterClient::ResultsManagementApi* | [**get_results_for_line_item_for_class**](docs/ResultsManagementApi.md#get_results_for_line_item_for_class) | **GET** /classes/{classSourcedId}/lineItems/{lineItemSourcedId}/results | The REST read request message for the getResultsForLineItemForClass() API call.
+*OneRosterClient::ResultsManagementApi* | [**get_results_for_student_for_class**](docs/ResultsManagementApi.md#get_results_for_student_for_class) | **GET** /classes/{classSourcedId}/students/{studentSourcedId}/results | The REST read request message for the getResultsForStudentForClass() API call.
+*OneRosterClient::ResultsManagementApi* | [**put_result**](docs/ResultsManagementApi.md#put_result) | **PUT** /results/{sourcedId} | The REST create request message for the putResult() API call.
+*OneRosterClient::SchoolsManagementApi* | [**get_school**](docs/SchoolsManagementApi.md#get_school) | **GET** /schools/{sourcedId} | The REST read request message for the getSchool() API call.
+*OneRosterClient::SchoolsManagementApi* | [**get_schools**](docs/SchoolsManagementApi.md#get_schools) | **GET** /schools | The REST read request message for the getSchools() API call.
+*OneRosterClient::StudentsManagementApi* | [**get_student**](docs/StudentsManagementApi.md#get_student) | **GET** /students/{sourcedId} | The REST read request message for the getStudent() API call.
+*OneRosterClient::StudentsManagementApi* | [**get_students**](docs/StudentsManagementApi.md#get_students) | **GET** /students | The REST read request message for the getStudents() API call.
+*OneRosterClient::StudentsManagementApi* | [**get_students_for_class**](docs/StudentsManagementApi.md#get_students_for_class) | **GET** /classes/{classSourcedId}/students | The REST read request message for the getStudentsForClass() API call.
+*OneRosterClient::StudentsManagementApi* | [**get_students_for_class_in_school**](docs/StudentsManagementApi.md#get_students_for_class_in_school) | **GET** /schools/{schoolSourcedId}/classes/{classSourcedId}/students | The REST read request message for the getStudentsForClassInSchool() API call.
+*OneRosterClient::StudentsManagementApi* | [**get_students_for_school**](docs/StudentsManagementApi.md#get_students_for_school) | **GET** /schools/{schoolSourcedId}/students | The REST read request message for the getStudentsForSchool() API call.
+*OneRosterClient::TeachersManagementApi* | [**get_teacher**](docs/TeachersManagementApi.md#get_teacher) | **GET** /teachers/{sourcedId} | The REST read request message for the getTeacher() API call.
+*OneRosterClient::TeachersManagementApi* | [**get_teachers**](docs/TeachersManagementApi.md#get_teachers) | **GET** /teachers | The REST read request message for the getTeachers() API call.
+*OneRosterClient::TeachersManagementApi* | [**get_teachers_for_class**](docs/TeachersManagementApi.md#get_teachers_for_class) | **GET** /classes/{classSourcedId}/teachers | The REST read request message for the getTeachersForClass() API call.
+*OneRosterClient::TeachersManagementApi* | [**get_teachers_for_class_in_school**](docs/TeachersManagementApi.md#get_teachers_for_class_in_school) | **GET** /schools/{schoolSourcedId}/classes/{classSourcedId}/teachers | The REST read request message for the getTeachersForClassInSchool() API call.
+*OneRosterClient::TeachersManagementApi* | [**get_teachers_for_school**](docs/TeachersManagementApi.md#get_teachers_for_school) | **GET** /schools/{schoolSourcedId}/teachers | The REST read request message for the getTeachersForSchool() API call.
+*OneRosterClient::TermsManagementApi* | [**get_term**](docs/TermsManagementApi.md#get_term) | **GET** /terms/{sourcedId} | The REST read request message for the getTerm() API call.
+*OneRosterClient::TermsManagementApi* | [**get_terms**](docs/TermsManagementApi.md#get_terms) | **GET** /terms | The REST read request message for the getTerms() API call.
+*OneRosterClient::TermsManagementApi* | [**get_terms_for_school**](docs/TermsManagementApi.md#get_terms_for_school) | **GET** /schools/{schoolSourcedId}/terms | The REST read request message for the getTermsForSchool() API call.
+*OneRosterClient::UsersManagementApi* | [**get_user**](docs/UsersManagementApi.md#get_user) | **GET** /users/{sourcedId} | The REST read request message for the getUser() API call.
+*OneRosterClient::UsersManagementApi* | [**get_users**](docs/UsersManagementApi.md#get_users) | **GET** /users | The REST read request message for the getUsers() API call.
 
 ## Documentation for Models
 
- - [SwaggerClient::AcademicSessionType](docs/AcademicSessionType.md)
- - [SwaggerClient::AcademicSessionTypeAllOf](docs/AcademicSessionTypeAllOf.md)
- - [SwaggerClient::BaseType](docs/BaseType.md)
- - [SwaggerClient::CategoriesType](docs/CategoriesType.md)
- - [SwaggerClient::CategoryType](docs/CategoryType.md)
- - [SwaggerClient::CategoryTypeAllOf](docs/CategoryTypeAllOf.md)
- - [SwaggerClient::ClassType](docs/ClassType.md)
- - [SwaggerClient::ClassTypeAllOf](docs/ClassTypeAllOf.md)
- - [SwaggerClient::ClassesType](docs/ClassesType.md)
- - [SwaggerClient::CourseType](docs/CourseType.md)
- - [SwaggerClient::CourseTypeAllOf](docs/CourseTypeAllOf.md)
- - [SwaggerClient::CoursesType](docs/CoursesType.md)
- - [SwaggerClient::DemographicType](docs/DemographicType.md)
- - [SwaggerClient::DemographicTypeAllOf](docs/DemographicTypeAllOf.md)
- - [SwaggerClient::DemographicsType](docs/DemographicsType.md)
- - [SwaggerClient::EnrollmentType](docs/EnrollmentType.md)
- - [SwaggerClient::EnrollmentTypeAllOf](docs/EnrollmentTypeAllOf.md)
- - [SwaggerClient::EnrollmentsType](docs/EnrollmentsType.md)
- - [SwaggerClient::GUIDRefType](docs/GUIDRefType.md)
- - [SwaggerClient::GUIDType](docs/GUIDType.md)
- - [SwaggerClient::IdentifierType](docs/IdentifierType.md)
- - [SwaggerClient::ImsxCodeMinorFieldType](docs/ImsxCodeMinorFieldType.md)
- - [SwaggerClient::ImsxCodeMinorType](docs/ImsxCodeMinorType.md)
- - [SwaggerClient::ImsxStatusInfoType](docs/ImsxStatusInfoType.md)
- - [SwaggerClient::LineItemType](docs/LineItemType.md)
- - [SwaggerClient::LineItemTypeAllOf](docs/LineItemTypeAllOf.md)
- - [SwaggerClient::LineItemsType](docs/LineItemsType.md)
- - [SwaggerClient::MetadataType](docs/MetadataType.md)
- - [SwaggerClient::MultipleAcademicSessionsType](docs/MultipleAcademicSessionsType.md)
- - [SwaggerClient::OrgType](docs/OrgType.md)
- - [SwaggerClient::OrgTypeAllOf](docs/OrgTypeAllOf.md)
- - [SwaggerClient::OrgsType](docs/OrgsType.md)
- - [SwaggerClient::ResourceType](docs/ResourceType.md)
- - [SwaggerClient::ResourceTypeAllOf](docs/ResourceTypeAllOf.md)
- - [SwaggerClient::ResourcesType](docs/ResourcesType.md)
- - [SwaggerClient::ResultType](docs/ResultType.md)
- - [SwaggerClient::ResultTypeAllOf](docs/ResultTypeAllOf.md)
- - [SwaggerClient::ResultsType](docs/ResultsType.md)
- - [SwaggerClient::SingleAcademicSessionType](docs/SingleAcademicSessionType.md)
- - [SwaggerClient::SingleCategoryType](docs/SingleCategoryType.md)
- - [SwaggerClient::SingleClassType](docs/SingleClassType.md)
- - [SwaggerClient::SingleCourseType](docs/SingleCourseType.md)
- - [SwaggerClient::SingleDemographicsType](docs/SingleDemographicsType.md)
- - [SwaggerClient::SingleEnrollmentType](docs/SingleEnrollmentType.md)
- - [SwaggerClient::SingleLineItemType](docs/SingleLineItemType.md)
- - [SwaggerClient::SingleOrgType](docs/SingleOrgType.md)
- - [SwaggerClient::SingleResourceType](docs/SingleResourceType.md)
- - [SwaggerClient::SingleResultType](docs/SingleResultType.md)
- - [SwaggerClient::SingleUserType](docs/SingleUserType.md)
- - [SwaggerClient::UserIdType](docs/UserIdType.md)
- - [SwaggerClient::UserType](docs/UserType.md)
- - [SwaggerClient::UserTypeAllOf](docs/UserTypeAllOf.md)
- - [SwaggerClient::UsersType](docs/UsersType.md)
+ - [OneRosterClient::AcademicSessionType](docs/AcademicSessionType.md)
+ - [OneRosterClient::AcademicSessionTypeAllOf](docs/AcademicSessionTypeAllOf.md)
+ - [OneRosterClient::BaseType](docs/BaseType.md)
+ - [OneRosterClient::CategoriesType](docs/CategoriesType.md)
+ - [OneRosterClient::CategoryType](docs/CategoryType.md)
+ - [OneRosterClient::CategoryTypeAllOf](docs/CategoryTypeAllOf.md)
+ - [OneRosterClient::ClassType](docs/ClassType.md)
+ - [OneRosterClient::ClassTypeAllOf](docs/ClassTypeAllOf.md)
+ - [OneRosterClient::ClassesType](docs/ClassesType.md)
+ - [OneRosterClient::CourseType](docs/CourseType.md)
+ - [OneRosterClient::CourseTypeAllOf](docs/CourseTypeAllOf.md)
+ - [OneRosterClient::CoursesType](docs/CoursesType.md)
+ - [OneRosterClient::DemographicType](docs/DemographicType.md)
+ - [OneRosterClient::DemographicTypeAllOf](docs/DemographicTypeAllOf.md)
+ - [OneRosterClient::DemographicsType](docs/DemographicsType.md)
+ - [OneRosterClient::EnrollmentType](docs/EnrollmentType.md)
+ - [OneRosterClient::EnrollmentTypeAllOf](docs/EnrollmentTypeAllOf.md)
+ - [OneRosterClient::EnrollmentsType](docs/EnrollmentsType.md)
+ - [OneRosterClient::GUIDRefType](docs/GUIDRefType.md)
+ - [OneRosterClient::GUIDType](docs/GUIDType.md)
+ - [OneRosterClient::IdentifierType](docs/IdentifierType.md)
+ - [OneRosterClient::ImsxCodeMinorFieldType](docs/ImsxCodeMinorFieldType.md)
+ - [OneRosterClient::ImsxCodeMinorType](docs/ImsxCodeMinorType.md)
+ - [OneRosterClient::ImsxStatusInfoType](docs/ImsxStatusInfoType.md)
+ - [OneRosterClient::LineItemType](docs/LineItemType.md)
+ - [OneRosterClient::LineItemTypeAllOf](docs/LineItemTypeAllOf.md)
+ - [OneRosterClient::LineItemsType](docs/LineItemsType.md)
+ - [OneRosterClient::MetadataType](docs/MetadataType.md)
+ - [OneRosterClient::MultipleAcademicSessionsType](docs/MultipleAcademicSessionsType.md)
+ - [OneRosterClient::OrgType](docs/OrgType.md)
+ - [OneRosterClient::OrgTypeAllOf](docs/OrgTypeAllOf.md)
+ - [OneRosterClient::OrgsType](docs/OrgsType.md)
+ - [OneRosterClient::ResourceType](docs/ResourceType.md)
+ - [OneRosterClient::ResourceTypeAllOf](docs/ResourceTypeAllOf.md)
+ - [OneRosterClient::ResourcesType](docs/ResourcesType.md)
+ - [OneRosterClient::ResultType](docs/ResultType.md)
+ - [OneRosterClient::ResultTypeAllOf](docs/ResultTypeAllOf.md)
+ - [OneRosterClient::ResultsType](docs/ResultsType.md)
+ - [OneRosterClient::SingleAcademicSessionType](docs/SingleAcademicSessionType.md)
+ - [OneRosterClient::SingleCategoryType](docs/SingleCategoryType.md)
+ - [OneRosterClient::SingleClassType](docs/SingleClassType.md)
+ - [OneRosterClient::SingleCourseType](docs/SingleCourseType.md)
+ - [OneRosterClient::SingleDemographicsType](docs/SingleDemographicsType.md)
+ - [OneRosterClient::SingleEnrollmentType](docs/SingleEnrollmentType.md)
+ - [OneRosterClient::SingleLineItemType](docs/SingleLineItemType.md)
+ - [OneRosterClient::SingleOrgType](docs/SingleOrgType.md)
+ - [OneRosterClient::SingleResourceType](docs/SingleResourceType.md)
+ - [OneRosterClient::SingleResultType](docs/SingleResultType.md)
+ - [OneRosterClient::SingleUserType](docs/SingleUserType.md)
+ - [OneRosterClient::UserIdType](docs/UserIdType.md)
+ - [OneRosterClient::UserType](docs/UserType.md)
+ - [OneRosterClient::UserTypeAllOf](docs/UserTypeAllOf.md)
+ - [OneRosterClient::UsersType](docs/UsersType.md)
 
 ## Documentation for Authorization
 

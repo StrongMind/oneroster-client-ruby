@@ -1,4 +1,4 @@
-# SwaggerClient::SingleAcademicSessionType
+# OneRosterClient::SingleAcademicSessionType
 
 ## Properties
 Name | Type | Description | Notes

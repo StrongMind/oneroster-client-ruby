@@ -1,4 +1,4 @@
-# SwaggerClient::CategoriesManagementApi
+# OneRosterClient::CategoriesManagementApi
 
 All URIs are relative to */*
 
@@ -19,21 +19,21 @@ The REST delete request message for the deleteCategory() API call.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'oneroster_client'
 # setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::CategoriesManagementApi.new
+api_instance = OneRosterClient::CategoriesManagementApi.new
 sourced_id = 'sourced_id_example' # String | ...tbd...
 
 
 begin
   #The REST delete request message for the deleteCategory() API call.
   api_instance.delete_category(sourced_id)
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling CategoriesManagementApi->delete_category: #{e}"
 end
 ```
@@ -69,14 +69,14 @@ The REST read request message for the getCategories() API call.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'oneroster_client'
 # setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::CategoriesManagementApi.new
+api_instance = OneRosterClient::CategoriesManagementApi.new
 opts = { 
   limit: 100, # Integer | To define the download segmentation value i.e. the maximum number of records to be contained in the response.
   offset: 0, # Integer | The number of the first record to be supplied in the segmented response message.
@@ -91,7 +91,7 @@ begin
   #The REST read request message for the getCategories() API call.
   result = api_instance.get_categories(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling CategoriesManagementApi->get_categories: #{e}"
 end
 ```
@@ -133,14 +133,14 @@ The REST read request message for the getCategory() API call.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'oneroster_client'
 # setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::CategoriesManagementApi.new
+api_instance = OneRosterClient::CategoriesManagementApi.new
 sourced_id = 'sourced_id_example' # String | ...tbd...
 
 
@@ -148,7 +148,7 @@ begin
   #The REST read request message for the getCategory() API call.
   result = api_instance.get_category(sourced_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling CategoriesManagementApi->get_category: #{e}"
 end
 ```
@@ -184,22 +184,22 @@ The REST create request message for the putCategory() API call.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'oneroster_client'
 # setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::CategoriesManagementApi.new
-body = SwaggerClient::SingleCategoryType.new # SingleCategoryType | ...tbd...
+api_instance = OneRosterClient::CategoriesManagementApi.new
+body = OneRosterClient::SingleCategoryType.new # SingleCategoryType | ...tbd...
 sourced_id = 'sourced_id_example' # String | ...tbd...
 
 
 begin
   #The REST create request message for the putCategory() API call.
   api_instance.put_category(bodysourced_id)
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling CategoriesManagementApi->put_category: #{e}"
 end
 ```

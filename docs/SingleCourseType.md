@@ -1,4 +1,4 @@
-# SwaggerClient::SingleCourseType
+# OneRosterClient::SingleCourseType
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# SwaggerClient::ResultsManagementApi
+# OneRosterClient::ResultsManagementApi
 
 All URIs are relative to */*
 
@@ -22,21 +22,21 @@ The REST delete request message for the deleteResult() API call.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'oneroster_client'
 # setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::ResultsManagementApi.new
+api_instance = OneRosterClient::ResultsManagementApi.new
 sourced_id = 'sourced_id_example' # String | ...tbd...
 
 
 begin
   #The REST delete request message for the deleteResult() API call.
   api_instance.delete_result(sourced_id)
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling ResultsManagementApi->delete_result: #{e}"
 end
 ```
@@ -72,14 +72,14 @@ The REST read request message for the getResult() API call.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'oneroster_client'
 # setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::ResultsManagementApi.new
+api_instance = OneRosterClient::ResultsManagementApi.new
 sourced_id = 'sourced_id_example' # String | ...tbd...
 
 
@@ -87,7 +87,7 @@ begin
   #The REST read request message for the getResult() API call.
   result = api_instance.get_result(sourced_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling ResultsManagementApi->get_result: #{e}"
 end
 ```
@@ -123,14 +123,14 @@ The REST read request message for the getResults() API call.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'oneroster_client'
 # setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::ResultsManagementApi.new
+api_instance = OneRosterClient::ResultsManagementApi.new
 opts = { 
   limit: 100, # Integer | To define the download segmentation value i.e. the maximum number of records to be contained in the response.
   offset: 0, # Integer | The number of the first record to be supplied in the segmented response message.
@@ -145,7 +145,7 @@ begin
   #The REST read request message for the getResults() API call.
   result = api_instance.get_results(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling ResultsManagementApi->get_results: #{e}"
 end
 ```
@@ -187,14 +187,14 @@ The REST read request message for the getResultsForClass() API call.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'oneroster_client'
 # setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::ResultsManagementApi.new
+api_instance = OneRosterClient::ResultsManagementApi.new
 class_sourced_id = 'class_sourced_id_example' # String | ...tbd...
 opts = { 
   limit: 100, # Integer | To define the download segmentation value i.e. the maximum number of records to be contained in the response.
@@ -210,7 +210,7 @@ begin
   #The REST read request message for the getResultsForClass() API call.
   result = api_instance.get_results_for_class(class_sourced_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling ResultsManagementApi->get_results_for_class: #{e}"
 end
 ```
@@ -253,14 +253,14 @@ The REST read request message for the getResultsForLineItemForClass() API call.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'oneroster_client'
 # setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::ResultsManagementApi.new
+api_instance = OneRosterClient::ResultsManagementApi.new
 class_sourced_id = 'class_sourced_id_example' # String | ...tbd...
 line_item_sourced_id = 'line_item_sourced_id_example' # String | ...tbd...
 opts = { 
@@ -277,7 +277,7 @@ begin
   #The REST read request message for the getResultsForLineItemForClass() API call.
   result = api_instance.get_results_for_line_item_for_class(class_sourced_id, line_item_sourced_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling ResultsManagementApi->get_results_for_line_item_for_class: #{e}"
 end
 ```
@@ -321,14 +321,14 @@ The REST read request message for the getResultsForStudentForClass() API call.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'oneroster_client'
 # setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::ResultsManagementApi.new
+api_instance = OneRosterClient::ResultsManagementApi.new
 class_sourced_id = 'class_sourced_id_example' # String | ...tbd...
 student_sourced_id = 'student_sourced_id_example' # String | ...tbd...
 opts = { 
@@ -345,7 +345,7 @@ begin
   #The REST read request message for the getResultsForStudentForClass() API call.
   result = api_instance.get_results_for_student_for_class(class_sourced_id, student_sourced_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling ResultsManagementApi->get_results_for_student_for_class: #{e}"
 end
 ```
@@ -389,22 +389,22 @@ The REST create request message for the putResult() API call.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'oneroster_client'
 # setup authorization
-SwaggerClient.configure do |config|
+OneRosterClient.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Security
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::ResultsManagementApi.new
-body = SwaggerClient::SingleResultType.new # SingleResultType | ...tbd...
+api_instance = OneRosterClient::ResultsManagementApi.new
+body = OneRosterClient::SingleResultType.new # SingleResultType | ...tbd...
 sourced_id = 'sourced_id_example' # String | ...tbd...
 
 
 begin
   #The REST create request message for the putResult() API call.
   api_instance.put_result(bodysourced_id)
-rescue SwaggerClient::ApiError => e
+rescue OneRosterClient::ApiError => e
   puts "Exception when calling ResultsManagementApi->put_result: #{e}"
 end
 ```

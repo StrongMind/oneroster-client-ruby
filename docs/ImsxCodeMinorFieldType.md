@@ -1,4 +1,4 @@
-# SwaggerClient::ImsxCodeMinorFieldType
+# OneRosterClient::ImsxCodeMinorFieldType
 
 ## Properties
 Name | Type | Description | Notes

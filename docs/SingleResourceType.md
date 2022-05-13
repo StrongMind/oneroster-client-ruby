@@ -1,4 +1,4 @@
-# SwaggerClient::SingleResourceType
+# OneRosterClient::SingleResourceType
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# SwaggerClient::SingleEnrollmentType
+# OneRosterClient::SingleEnrollmentType
 
 ## Properties
 Name | Type | Description | Notes
