@@ -25,6 +25,8 @@ Gem::Specification.new do |s|
   s.description = "The OneRoster service binding is available in WSDL/XSD and REST/JSON. The model is based upon the IMS PSM modelling approach."
   s.license     = "Unlicense"
   s.required_ruby_version = ">= 1.9"
+  s.metadata["allowed_push_host"] = "https://rubygems.pkg.github.com/StrongMind"
+  s.metadata["github_repo"] = "git@github.com:StrongMind/oneroster-client-ruby.git"
 
   s.add_runtime_dependency 'typhoeus', '~> 1.0', '>= 1.0.1'
   s.add_runtime_dependency 'json', '~> 2.1', '>= 2.1.0'
