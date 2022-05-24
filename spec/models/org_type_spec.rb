@@ -19,7 +19,8 @@ require 'date'
 describe 'OrgType' do
   before do
     # run before each test
-    @instance = OneRosterClient::OrgType.new
+    obj = build(:one_roster_org)
+    @instance = OneRosterClient::OrgType.build_from_hash(obj.to_hash)
   end
 
   after do

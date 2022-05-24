@@ -333,9 +333,6 @@ module OneRosterClient
       return nil unless attributes.is_a?(Hash)
       super(attributes)
       self.class.openapi_types.each_pair do |key, type|
-        if type == :""
-          raise "No type for #{key}."
-        end
         if type =~ /\AArray<(.*)>/i
           # check to ensure the input is an array given that the attribute
           # is documented as an array but the input is not

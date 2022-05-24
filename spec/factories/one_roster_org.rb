@@ -6,7 +6,7 @@ FactoryBot.define do
   factory :one_roster_org, class: OneRosterClient::OrgType do
     sourced_id { SecureRandom.uuid }
     status { 'active' }
-    date_last_modified { Faker::Time.between(from: DateTime.now - 1, to: DateTime.now) }
+    date_last_modified { Faker::Time.between(from: DateTime.now - 1, to: DateTime.now).to_s }
     metadata do
       {
         'StrongMind' => {
