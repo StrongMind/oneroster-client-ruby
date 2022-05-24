@@ -13,7 +13,7 @@ require 'date'
 
 module OneRosterClient
   # ...tbd (Class description)...
-  class GUIDRefType
+  class GUIDRefType < BaseType
     # Model Primitive Datatype = AnyURI
     attr_accessor :href
 

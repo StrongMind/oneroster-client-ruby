@@ -13,7 +13,7 @@ require 'date'
 
 module OneRosterClient
   # ...tbd (Class description)...
-  class DemographicType
+  class DemographicType < BaseType
     # Model Primitive Datatype = Date
     attr_accessor :birth_date
 
