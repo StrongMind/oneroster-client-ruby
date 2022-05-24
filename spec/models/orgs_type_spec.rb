@@ -19,7 +19,8 @@ require 'date'
 describe 'OrgsType' do
   before do
     # run before each test
-    @instance = OneRosterClient::OrgsType.new
+    obj = build(:one_roster_org)
+    @instance = OneRosterClient::OrgsType.build_from_hash({:orgs => [obj.to_hash]})
   end
 
   after do
@@ -33,7 +34,12 @@ describe 'OrgsType' do
   end
   describe 'test attribute "orgs"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.orgs).to be_a(Array)
+    end
+    it 'contains orgs' do
+      @instance.orgs.each do |item|
+        expect(item).to be_a(OneRosterClient::OrgType)
+      end
     end
   end
 

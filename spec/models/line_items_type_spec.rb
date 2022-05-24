@@ -19,7 +19,8 @@ require 'date'
 describe 'LineItemsType' do
   before do
     # run before each test
-    @instance = OneRosterClient::LineItemsType.new
+    obj = build(:one_roster_line_item)
+    @instance = OneRosterClient::LineItemsType.build_from_hash({:lineItems => [obj.to_hash]})
   end
 
   after do
@@ -33,7 +34,12 @@ describe 'LineItemsType' do
   end
   describe 'test attribute "line_items"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.line_items).to be_a(Array)
+    end
+    it 'contains line_items' do
+      @instance.line_items.each do |item|
+        expect(item).to be_a(OneRosterClient::LineItemType)
+      end
     end
   end
 

@@ -19,7 +19,7 @@ require 'date'
 describe 'CategoriesType' do
   before do
     # run before each test
-    @instance = OneRosterClient::CategoriesType.new
+    @instance = OneRosterClient::CategoriesType.build_from_hash({:categories => []})
   end
 
   after do
@@ -33,7 +33,7 @@ describe 'CategoriesType' do
   end
   describe 'test attribute "categories"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.categories).to be_a(Array)
     end
   end
 

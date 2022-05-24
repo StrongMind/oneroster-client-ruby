@@ -19,7 +19,8 @@ require 'date'
 describe 'EnrollmentsType' do
   before do
     # run before each test
-    @instance = OneRosterClient::EnrollmentsType.new
+    obj = build(:one_roster_enrollment)
+    @instance = OneRosterClient::EnrollmentsType.build_from_hash({:enrollments => [obj.to_hash]})
   end
 
   after do
@@ -33,7 +34,12 @@ describe 'EnrollmentsType' do
   end
   describe 'test attribute "enrollments"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.enrollments).to be_a(Array)
+    end
+    it 'contains enrollments' do
+      @instance.enrollments.each do |item|
+        expect(item).to be_a(OneRosterClient::EnrollmentType)
+      end
     end
   end
 

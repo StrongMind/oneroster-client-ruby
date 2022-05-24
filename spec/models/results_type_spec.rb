@@ -36,7 +36,7 @@ describe 'ResultsType' do
     it 'should work' do
       expect(@instance.results).to be_a(Array)
     end
-    it 'contains users' do
+    it 'contains results' do
       @instance.results.each do |item|
         expect(item).to be_a(OneRosterClient::ResultType)
       end

@@ -19,7 +19,8 @@ require 'date'
 describe 'DemographicsType' do
   before do
     # run before each test
-    @instance = OneRosterClient::DemographicsType.new
+    obj = build(:one_roster_demographic)
+    @instance = OneRosterClient::DemographicsType.build_from_hash({:demographics => [obj.to_hash]})
   end
 
   after do
@@ -33,7 +34,12 @@ describe 'DemographicsType' do
   end
   describe 'test attribute "demographics"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.demographics).to be_a(Array)
+    end
+    it 'contains demographics' do
+      @instance.demographics.each do |item|
+        expect(item).to be_a(OneRosterClient::DemographicType)
+      end
     end
   end
 

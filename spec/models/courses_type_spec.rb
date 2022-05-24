@@ -19,7 +19,8 @@ require 'date'
 describe 'CoursesType' do
   before do
     # run before each test
-    @instance = OneRosterClient::CoursesType.new
+    obj = build(:one_roster_course)
+    @instance = OneRosterClient::CoursesType.build_from_hash({:courses => [obj.to_hash]})
   end
 
   after do
@@ -33,7 +34,12 @@ describe 'CoursesType' do
   end
   describe 'test attribute "courses"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.courses).to be_a(Array)
+    end
+    it 'contains courses' do
+      @instance.courses.each do |item|
+        expect(item).to be_a(OneRosterClient::CourseType)
+      end
     end
   end
 

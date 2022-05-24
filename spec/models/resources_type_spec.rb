@@ -19,7 +19,7 @@ require 'date'
 describe 'ResourcesType' do
   before do
     # run before each test
-    @instance = OneRosterClient::ResourcesType.new
+    @instance = OneRosterClient::ResourcesType.build_from_hash({:resources => []})
   end
 
   after do
@@ -33,7 +33,7 @@ describe 'ResourcesType' do
   end
   describe 'test attribute "resources"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.resources).to be_a(Array)
     end
   end
 
