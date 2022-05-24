@@ -78,7 +78,7 @@ module OneRosterClient
       {
         :'birth_date' => :'birthDate',
         :'sex' => :'sex',
-        :'american_indian_or_alaska_native' => :'americanIndianOrAlaskaNative',
+        :'american_indian_or_alaska_native' => :'americanIndianOrAlsakaNative',
         :'asian' => :'asian',
         :'black_or_african_american' => :'blackOrAfricanAmerican',
         :'native_hawaiian_or_other_pacific_islander' => :'nativeHawaiianOrOtherPacificIslander',
@@ -116,7 +116,7 @@ module OneRosterClient
       Set.new([
       ])
     end
-  
+
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})

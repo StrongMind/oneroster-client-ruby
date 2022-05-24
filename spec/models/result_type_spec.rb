@@ -18,8 +18,8 @@ require 'date'
 # Please update as you see appropriate
 describe 'ResultType' do
   before do
-    # run before each test
-    @instance = OneRosterClient::ResultType.new
+    obj = build(:one_roster_result)
+    @instance = OneRosterClient::ResultType.build_from_hash(obj.to_hash)
   end
 
   after do

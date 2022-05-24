@@ -6143,7 +6143,7 @@
             "enum" : [ "male", "female" ],
             "type" : "string"
           },
-          "americanIndianOrAlaskaNative" : {
+          "americanIndianOrAlsakaNative" : {
             "description" : "Model Primitive Datatype = Boolean",
             "type" : "boolean"
           },
