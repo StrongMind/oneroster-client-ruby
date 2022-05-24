@@ -220,7 +220,7 @@ module OneRosterClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] score_status Object to be assigned
     def score_status=(score_status)
-      validator = EnumAttributeValidator.new('', ['exempt', 'fully graded', 'not submmitted', 'partially graded', 'submitted'])
+      validator = EnumAttributeValidator.new('', ['exempt', 'fully graded', 'not submitted', 'partially graded', 'submitted'])
       unless validator.valid?(score_status)
         fail ArgumentError, "invalid value for \"score_status\", must be one of #{validator.allowable_values}."
       end

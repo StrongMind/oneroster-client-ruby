@@ -24,7 +24,9 @@ FactoryBot.define do
     name { Faker::Lorem.word }
     identifier { Faker::Lorem.word }
     type { 'school' }
-    initialize_with { attributes }
+    parent { FactoryBot.build(:one_roster_guid_ref, type: 'org') }
+    children { [ FactoryBot.build(:one_roster_guid_ref, type: 'org'),
+                 FactoryBot.build(:one_roster_guid_ref, type: 'org') ] }
   end
 
   factory :one_roster_single_org, class: OneRosterClient::SingleOrgType do

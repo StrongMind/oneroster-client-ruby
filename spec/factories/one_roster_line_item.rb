@@ -8,6 +8,7 @@ FactoryBot.define do
     status { 'active' }
     date_last_modified { Faker::Time.between(from: DateTime.now - 1, to: DateTime.now).to_s }
     title { ['Current Grade', 'Final Grade'].sample }
+    description { Faker::Lorem.sentence }
     assign_date { Faker::Time.backward(days: 5).to_s }
     due_date { Faker::Time.forward(days: 5).to_s }
     _class { FactoryBot.build(:one_roster_guid_ref, type: 'class') }

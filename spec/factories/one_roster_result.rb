@@ -6,11 +6,11 @@ FactoryBot.define do
   factory :one_roster_result, class: OneRosterClient::ResultType do
     sourced_id { SecureRandom.uuid }
     status { 'active' }
-    date_last_modified { Faker::Time.between(from: DateTime.now - 1, to: DateTime.now) }
+    date_last_modified { Faker::Time.between(from: DateTime.now - 1, to: DateTime.now).to_s }
     metadata do
       {
         StrongMind: {
-          last_activity_at: Faker::Time.backward(days: 1),
+          last_activity_at: Faker::Time.backward(days: 1),g
           total_activity_time: Faker::Number.number(digits: 5)
         }
       }
@@ -19,8 +19,8 @@ FactoryBot.define do
     student { FactoryBot.build(:one_roster_guid_ref, type: 'user') }
     score_status { ['exempt', 'partially graded', 'fully graded', 'not submitted', 'submitted'].sample }
     score { Faker::Number.decimal(l_digits: 2, r_digits: 1) }
-    score_date { Faker::Time.backward(days: 1) }
-    initialize_with { attributes }
+    score_date { Faker::Time.backward(days: 1).to_s }
+    comment { Faker::Lorem.sentence }
   end
 
   factory :one_roster_single_result, class: OneRosterClient::SingleResultType do

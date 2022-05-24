@@ -6333,7 +6333,7 @@
             "$ref" : "#/components/schemas/GUIDRef.Type"
           },
           "scoreStatus" : {
-            "enum" : [ "exempt", "fully graded", "not submmitted", "partially graded", "submitted" ],
+            "enum" : [ "exempt", "fully graded", "not submitted", "partially graded", "submitted" ],
             "type" : "string"
           },
           "score" : {
