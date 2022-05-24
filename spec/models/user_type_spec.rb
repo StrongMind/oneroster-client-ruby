@@ -20,6 +20,8 @@ describe 'UserType' do
   before do
     # run before each test
     @instance = OneRosterClient::UserType.new
+    hash = FactoryBot.build(:one_roster_user).to_hash
+    @instance.build_from_hash(hash)
   end
 
   after do

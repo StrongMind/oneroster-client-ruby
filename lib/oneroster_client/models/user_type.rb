@@ -117,25 +117,25 @@ module OneRosterClient
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'username' => :'',
-        :'user_ids' => :'',
-        :'enabled_user' => :'',
-        :'given_name' => :'',
-        :'family_name' => :'',
-        :'middle_name' => :'',
-        :'role' => :'',
-        :'identifier' => :'',
-        :'email' => :'',
-        :'sms' => :'',
-        :'phone' => :'',
-        :'agents' => :'',
-        :'orgs' => :'',
-        :'grades' => :'',
-        :'password' => :'',
-        :'sourced_id' => :'',
-        :'status' => :'',
-        :'date_last_modified' => :'',
-        :'metadata' => :''
+        :'username' => :'String',
+        :'user_ids' => :'Array',
+        :'enabled_user' => :'Boolean',
+        :'given_name' => :'String',
+        :'family_name' => :'String',
+        :'middle_name' => :'String',
+        :'role' => :'String',
+        :'identifier' => :'String',
+        :'email' => :'String',
+        :'sms' => :'String',
+        :'phone' => :'String',
+        :'agents' => :'String',
+        :'orgs' => :'Array',
+        :'grades' => :'Array',
+        :'password' => :'String',
+        :'sourced_id' => :'String',
+        :'status' => :'String',
+        :'date_last_modified' => :'DateTime',
+        :'metadata' => :'Hash'
       }
     end
 
