@@ -19,7 +19,8 @@ require 'date'
 describe 'SingleDemographicsType' do
   before do
     # run before each test
-    @instance = OneRosterClient::SingleDemographicsType.new
+    factory = build(:one_roster_single_demographic)
+    @instance = OneRosterClient::SingleDemographicsType.build_from_hash factory.to_hash
   end
 
   after do
@@ -32,8 +33,8 @@ describe 'SingleDemographicsType' do
     end
   end
   describe 'test attribute "demographics"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    it 'should be a DemographicType' do
+      expect(@instance.demographics).to be_instance_of(OneRosterClient::DemographicType)
     end
   end
 

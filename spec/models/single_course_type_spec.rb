@@ -32,8 +32,8 @@ describe 'SingleCourseType' do
     end
   end
   describe 'test attribute "course"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    it 'should be an instance of CourseType' do
+      expect(@instance.course).to be_instance_of(OneRosterClient::CourseType)
     end
   end
 

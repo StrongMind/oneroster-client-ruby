@@ -26,7 +26,7 @@ module OneRosterClient
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'line_items' => :'Object'
+        :'line_items' => :'Array<LineItemType>'
       }
     end
 
