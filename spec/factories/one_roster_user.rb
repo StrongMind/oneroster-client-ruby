@@ -17,18 +17,9 @@ FactoryBot.define do
     username { Faker::Lorem.word }
     user_ids do
       [
-        {
-          type: 'powerschool_dcid',
-          identifier: Faker::Number.number
-        },
-        {
-          type: 'powerschool_number',
-          identifier: Faker::Number.number
-        },
-        {
-          type: 'identity_id',
-          identifier: SecureRandom.uuid
-        }
+        build(:one_roster_user_id, type: 'powerschool_dcid', identifier: Faker::Number.number),
+        build(:one_roster_user_id, type: 'powerschool_number', identifier: Faker::Number.number),
+        build(:one_roster_user_id, type: 'identity_id', identifier: SecureRandom.uuid),
       ]
     end
     enabled_user { true }
@@ -47,6 +38,11 @@ FactoryBot.define do
     end
     orgs { [FactoryBot.build(:one_roster_guid_ref, type: 'org')] }
     grades { ['KG'] }
+  end
+
+  factory :one_roster_user_id, class: OneRosterClient::UserIdType do
+    type { Faker::Lorem.word }
+    identifier { SecureRandom.uuid }
   end
 
   factory :one_roster_single_user, class: OneRosterClient::SingleUserType do

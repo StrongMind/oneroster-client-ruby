@@ -118,7 +118,7 @@ module OneRosterClient
     def self.openapi_types
       {
         :'username' => :'String',
-        :'user_ids' => :'Array<Object>',
+        :'user_ids' => :'Array<UserIdType>',
         :'enabled_user' => :'Boolean',
         :'given_name' => :'String',
         :'family_name' => :'String',
@@ -144,7 +144,7 @@ module OneRosterClient
       Set.new([
       ])
     end
-  
+
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})

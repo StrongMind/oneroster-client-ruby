@@ -18,8 +18,8 @@ require 'date'
 # Please update as you see appropriate
 describe 'UserIdType' do
   before do
-    # run before each test
-    @instance = OneRosterClient::UserIdType.new
+    obj = build(:one_roster_user_id)
+    @instance = OneRosterClient::UserIdType.build_from_hash(obj.to_hash)
   end
 
   after do
@@ -33,13 +33,13 @@ describe 'UserIdType' do
   end
   describe 'test attribute "type"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.type).to be_a(String)
     end
   end
 
   describe 'test attribute "identifier"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.identifier).to be_a(String)
     end
   end
 

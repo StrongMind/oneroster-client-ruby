@@ -44,6 +44,9 @@ describe 'UserType' do
   describe 'test attribute "user_ids"' do
     it 'should work' do
       expect(@instance.user_ids).to be_a(Array)
+      @instance.user_ids.each do |val|
+        expect(val).to be_a(OneRosterClient::UserIdType)
+      end
     end
   end
 

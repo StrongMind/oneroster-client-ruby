@@ -31,8 +31,8 @@ module OneRosterClient
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'type' => :'Object',
-        :'identifier' => :'Object'
+        :'type' => :'String',
+        :'identifier' => :'String'
       }
     end
 
@@ -41,7 +41,7 @@ module OneRosterClient
       Set.new([
       ])
     end
-  
+
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
