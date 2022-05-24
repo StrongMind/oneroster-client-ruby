@@ -10,5 +10,5 @@ Swagger Codegen version: 3.0.34
 =end
 
 module OneRosterClient
-  VERSION = '1.1.0'
+  VERSION = '1.1.1'
 end
