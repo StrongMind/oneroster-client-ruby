@@ -19,7 +19,8 @@ require 'date'
 describe 'SingleOrgType' do
   before do
     # run before each test
-    @instance = OneRosterClient::SingleOrgType.new
+    factory = build(:one_roster_single_org)
+    @instance = OneRosterClient::SingleOrgType.build_from_hash factory.to_hash
   end
 
   after do
@@ -32,8 +33,8 @@ describe 'SingleOrgType' do
     end
   end
   describe 'test attribute "org"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    it 'should be an instance of OrgType' do
+      expect(@instance.org).to be_instance_of(OneRosterClient::OrgType)
     end
   end
 
