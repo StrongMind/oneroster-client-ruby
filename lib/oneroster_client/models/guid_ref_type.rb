@@ -10,6 +10,7 @@ Swagger Codegen version: 3.0.34
 =end
 
 require 'date'
+require 'oneroster_client/models/base_type'
 
 module OneRosterClient
   # ...tbd (Class description)...
