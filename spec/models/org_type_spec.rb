@@ -34,13 +34,13 @@ describe 'OrgType' do
   end
   describe 'test attribute "name"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.name).to be_a(String)
     end
   end
 
   describe 'test attribute "type"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.type).to be_a(String)
       # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["department", "district", "local", "national", "school", "state"])
       # validator.allowable_values.each do |value|
       #   expect { @instance.type = value }.not_to raise_error
@@ -50,31 +50,34 @@ describe 'OrgType' do
 
   describe 'test attribute "identifier"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.identifier).to be_a(String)
     end
   end
 
   describe 'test attribute "parent"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.parent).to be_a(OneRosterClient::GUIDRefType)
     end
   end
 
   describe 'test attribute "children"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.children).to be_a(Array)
+      @instance.children.each do |element|
+        expect(element).to be_a(OneRosterClient::GUIDRefType)
+      end
     end
   end
 
   describe 'test attribute "sourced_id"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.sourced_id).to be_a(String)
     end
   end
 
   describe 'test attribute "status"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.status).to be_a(String)
       # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["active", "tobedeleted"])
       # validator.allowable_values.each do |value|
       #   expect { @instance.status = value }.not_to raise_error
@@ -84,13 +87,13 @@ describe 'OrgType' do
 
   describe 'test attribute "date_last_modified"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.date_last_modified).to be_a(DateTime)
     end
   end
 
   describe 'test attribute "metadata"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.metadata).to be_a(Hash)
     end
   end
 
