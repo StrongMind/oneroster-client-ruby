@@ -19,9 +19,11 @@ require 'date'
 describe 'UserType' do
   before do
     # run before each test
-    @instance = OneRosterClient::UserType.new
-    hash = FactoryBot.build(:one_roster_user).to_hash
-    @instance.build_from_hash(hash)
+    obj = build(:one_roster_user)
+    obj.password = 'password'
+    obj.middle_name = 'middle_name'
+    obj.enabled_user = true
+    @instance = OneRosterClient::UserType.build_from_hash(obj.to_hash)
   end
 
   after do
@@ -35,107 +37,103 @@ describe 'UserType' do
   end
   describe 'test attribute "username"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.username).to be_a(String)
     end
   end
 
   describe 'test attribute "user_ids"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.user_ids).to be_a(Array)
     end
   end
 
   describe 'test attribute "enabled_user"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.enabled_user).to be_a(TrueClass)
     end
   end
 
   describe 'test attribute "given_name"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.given_name).to be_a(String)
     end
   end
 
   describe 'test attribute "family_name"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.family_name).to be_a(String)
     end
   end
 
   describe 'test attribute "middle_name"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.middle_name).to be_a(String)
     end
   end
 
   describe 'test attribute "role"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["administrator", "aide", "guardian", "parent", "proctor", "relative", "student", "teacher"])
-      # validator.allowable_values.each do |value|
-      #   expect { @instance.role = value }.not_to raise_error
-      # end
+      expect(@instance.role).to be_a(String)
     end
   end
 
   describe 'test attribute "identifier"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.identifier).to be_a(String)
     end
   end
 
   describe 'test attribute "email"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.email).to be_a(String)
     end
   end
 
   describe 'test attribute "sms"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.sms).to be_a(String)
     end
   end
 
   describe 'test attribute "phone"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.phone).to be_a(String)
     end
   end
 
   describe 'test attribute "agents"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.agents).to be_a(Array)
     end
   end
 
   describe 'test attribute "orgs"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.orgs).to be_a(Array)
     end
   end
 
   describe 'test attribute "grades"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.grades).to be_a(Array)
     end
   end
 
   describe 'test attribute "password"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.password).to be_a(String)
     end
   end
 
   describe 'test attribute "sourced_id"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.sourced_id).to be_a(String)
     end
   end
 
   describe 'test attribute "status"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.status).to be_a(String)
       # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["active", "tobedeleted"])
       # validator.allowable_values.each do |value|
       #   expect { @instance.status = value }.not_to raise_error
@@ -145,13 +143,13 @@ describe 'UserType' do
 
   describe 'test attribute "date_last_modified"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.date_last_modified).to be_a(DateTime)
     end
   end
 
   describe 'test attribute "metadata"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.metadata).to be_a(Object)
     end
   end
 

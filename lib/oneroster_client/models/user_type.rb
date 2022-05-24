@@ -118,7 +118,7 @@ module OneRosterClient
     def self.openapi_types
       {
         :'username' => :'String',
-        :'user_ids' => :'Array',
+        :'user_ids' => :'Array<Object>',
         :'enabled_user' => :'Boolean',
         :'given_name' => :'String',
         :'family_name' => :'String',
@@ -128,14 +128,14 @@ module OneRosterClient
         :'email' => :'String',
         :'sms' => :'String',
         :'phone' => :'String',
-        :'agents' => :'String',
-        :'orgs' => :'Array',
-        :'grades' => :'Array',
+        :'agents' => :'Array<GUIDRefType>',
+        :'orgs' => :'Array<GUIDRefType>',
+        :'grades' => :'Array<String>',
         :'password' => :'String',
         :'sourced_id' => :'String',
         :'status' => :'String',
         :'date_last_modified' => :'DateTime',
-        :'metadata' => :'Hash'
+        :'metadata' => :'Object'
       }
     end
 

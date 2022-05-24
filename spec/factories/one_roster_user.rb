@@ -6,7 +6,7 @@ FactoryBot.define do
   factory :one_roster_user, class: OneRosterClient::UserType do
     sourced_id { SecureRandom.uuid }
     status { 'active' }
-    date_last_modified { Faker::Time.between(from: DateTime.now - 1, to: DateTime.now) }
+    date_last_modified { Faker::Time.between(from: DateTime.now - 1, to: DateTime.now).to_s }
     metadata do
       {
         StrongMind: {
@@ -47,7 +47,6 @@ FactoryBot.define do
     end
     orgs { [FactoryBot.build(:one_roster_guid_ref, type: 'org')] }
     grades { ['KG'] }
-    initialize_with { attributes }
   end
 
   factory :one_roster_single_user, class: OneRosterClient::SingleUserType do
