@@ -19,7 +19,8 @@ require 'date'
 describe 'LineItemType' do
   before do
     # run before each test
-    @instance = OneRosterClient::LineItemType.new
+    obj = build(:one_roster_line_item)
+    @instance = OneRosterClient::LineItemType.build_from_hash(obj.to_hash)
   end
 
   after do
