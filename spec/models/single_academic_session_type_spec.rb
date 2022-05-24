@@ -19,7 +19,8 @@ require 'date'
 describe 'SingleAcademicSessionType' do
   before do
     # run before each test
-    @instance = OneRosterClient::SingleAcademicSessionType.new
+    factory = build(:one_roster_single_academic_session)
+    @instance = OneRosterClient::SingleAcademicSessionType.build_from_hash factory.to_hash
   end
 
   after do
@@ -32,8 +33,8 @@ describe 'SingleAcademicSessionType' do
     end
   end
   describe 'test attribute "academic_session"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    it 'should be an instance of AcademicSessionType' do
+      expect(@instance.academic_session).to be_instance_of(OneRosterClient::AcademicSessionType)
     end
   end
 

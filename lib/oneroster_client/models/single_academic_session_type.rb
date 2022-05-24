@@ -26,7 +26,7 @@ module OneRosterClient
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'academic_session' => :'Object'
+        :'academic_session' => :'AcademicSessionType'
       }
     end
 
@@ -107,6 +107,9 @@ module OneRosterClient
     def build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
       self.class.openapi_types.each_pair do |key, type|
+        if type == :""
+          raise "No type for #{key}."
+        end
         if type =~ /\AArray<(.*)>/i
           # check to ensure the input is an array given that the attribute
           # is documented as an array but the input is not

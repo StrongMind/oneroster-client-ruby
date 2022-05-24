@@ -8,4 +8,6 @@ group :development, :test do
   gem 'rubocop', '~> 0.66.0'
   gem "faker"
   gem "factory_bot"
+  gem 'debase', '~> 0.2.5.beta2'
+  gem 'ruby-debug-ide'
 end

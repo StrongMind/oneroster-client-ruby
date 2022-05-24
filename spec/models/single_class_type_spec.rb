@@ -19,7 +19,8 @@ require 'date'
 describe 'SingleClassType' do
   before do
     # run before each test
-    @instance = OneRosterClient::SingleClassType.new
+    factory = build(:one_roster_single_class)
+    @instance = OneRosterClient::SingleClassType.build_from_hash factory.to_hash
   end
 
   after do
@@ -32,8 +33,8 @@ describe 'SingleClassType' do
     end
   end
   describe 'test attribute "_class"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    it 'should be an instance of ClassType' do
+      expect(@instance._class).to be_instance_of(OneRosterClient::ClassType)
     end
   end
 
