@@ -13,7 +13,7 @@ require 'date'
 
 module OneRosterClient
   # ...tbd (Class description)...
-  class ResultType < OneRosterClient::BaseType
+  class ResultType < BaseType
     attr_accessor :line_item
 
     attr_accessor :student

@@ -13,7 +13,7 @@ require 'date'
 
 module OneRosterClient
   # ...tbd (Class description)...
-  class LineItemType < OneRosterClient::BaseType
+  class LineItemType < BaseType
     # Model Primitive Datatype = NormalizedString
     attr_accessor :title
 

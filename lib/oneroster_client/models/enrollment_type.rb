@@ -13,7 +13,7 @@ require 'date'
 
 module OneRosterClient
   # ...tbd (Class description)...
-  class EnrollmentType < OneRosterClient::BaseType
+  class EnrollmentType < BaseType
     attr_accessor :user
 
     attr_accessor :_class
