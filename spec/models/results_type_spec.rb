@@ -19,7 +19,8 @@ require 'date'
 describe 'ResultsType' do
   before do
     # run before each test
-    @instance = OneRosterClient::ResultsType.new
+    obj = build(:one_roster_result)
+    @instance = OneRosterClient::ResultsType.build_from_hash({:results => [obj.to_hash]})
   end
 
   after do
@@ -33,7 +34,12 @@ describe 'ResultsType' do
   end
   describe 'test attribute "results"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.results).to be_a(Array)
+    end
+    it 'contains users' do
+      @instance.results.each do |item|
+        expect(item).to be_a(OneRosterClient::ResultType)
+      end
     end
   end
 
