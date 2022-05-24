@@ -32,8 +32,8 @@ describe 'SingleDemographicsType' do
     end
   end
   describe 'test attribute "demographics"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    it 'should be a DemographicType' do
+      expect(@instance.demographics).to be_instance_of(OneRosterClient::DemographicType)
     end
   end
 

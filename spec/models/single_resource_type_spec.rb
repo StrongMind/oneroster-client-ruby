@@ -32,7 +32,7 @@ describe 'SingleResourceType' do
     end
   end
   describe 'test attribute "resource"' do
-    it 'should work' do
+    it 'should be a resource type' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end

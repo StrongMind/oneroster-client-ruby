@@ -19,7 +19,8 @@ require 'date'
 describe 'SingleResultType' do
   before do
     # run before each test
-    @instance = OneRosterClient::SingleResultType.new
+    factory = build(:one_roster_single_result)
+    @instance = OneRosterClient::SingleResultType.build_from_hash factory.to_hash
   end
 
   after do
@@ -32,8 +33,8 @@ describe 'SingleResultType' do
     end
   end
   describe 'test attribute "result"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    it 'should be a ResultType' do
+      expect(@instance.result).to be_instance_of(OneRosterClient::ResultType)
     end
   end
 

@@ -26,7 +26,7 @@ module OneRosterClient
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'user' => :'Object'
+        :'user' => :'UserType'
       }
     end
 

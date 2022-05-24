@@ -19,7 +19,8 @@ require 'date'
 describe 'SingleEnrollmentType' do
   before do
     # run before each test
-    @instance = OneRosterClient::SingleEnrollmentType.new
+    factory = build(:one_roster_single_enrollment)
+    @instance = OneRosterClient::SingleEnrollmentType.build_from_hash factory.to_hash
   end
 
   after do
@@ -32,8 +33,8 @@ describe 'SingleEnrollmentType' do
     end
   end
   describe 'test attribute "enrollment"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    it 'should be an EnrollmentType' do
+      expect(@instance.enrollment).to be_instance_of(OneRosterClient::EnrollmentType)
     end
   end
 
