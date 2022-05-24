@@ -19,7 +19,8 @@ require 'date'
 describe 'EnrollmentType' do
   before do
     # run before each test
-    @instance = OneRosterClient::EnrollmentType.new
+    obj = build(:one_roster_enrollment)
+    @instance = OneRosterClient::EnrollmentType.build_from_hash(obj.to_hash)
   end
 
   after do
