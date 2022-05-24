@@ -112,23 +112,23 @@ module OneRosterClient
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'birth_date' => :'',
-        :'sex' => :'',
-        :'american_indian_or_alaska_native' => :'',
-        :'asian' => :'',
-        :'black_or_african_american' => :'',
-        :'native_hawaiian_or_other_pacific_islander' => :'',
-        :'white' => :'',
-        :'demographic_race_two_or_more_races' => :'',
-        :'hispanic_or_latino_ethnicity' => :'',
-        :'country_of_birth_code' => :'',
-        :'state_of_birth_abbreviation' => :'',
-        :'city_of_birth' => :'',
-        :'public_school_residence_status' => :'',
-        :'sourced_id' => :'',
-        :'status' => :'',
-        :'date_last_modified' => :'',
-        :'metadata' => :''
+        :'birth_date' => :'Date',
+        :'sex' => :'String',
+        :'american_indian_or_alaska_native' => :'Boolean',
+        :'asian' => :'Boolean',
+        :'black_or_african_american' => :'Boolean',
+        :'native_hawaiian_or_other_pacific_islander' => :'Boolean',
+        :'white' => :'Boolean',
+        :'demographic_race_two_or_more_races' => :'Boolean',
+        :'hispanic_or_latino_ethnicity' => :'Boolean',
+        :'country_of_birth_code' => :'String',
+        :'state_of_birth_abbreviation' => :'String',
+        :'city_of_birth' => :'String',
+        :'public_school_residence_status' => :'String',
+        :'sourced_id' => :'String',
+        :'status' => :'String',
+        :'date_last_modified' => :'DateTime',
+        :'metadata' => :'Object'
       }
     end
 
