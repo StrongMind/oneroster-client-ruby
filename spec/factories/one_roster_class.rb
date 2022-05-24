@@ -23,6 +23,8 @@ FactoryBot.define do
     end
     subjects { [Faker::Lorem.word, Faker::Lorem.word] }
     subject_codes { [Faker::Lorem.word, Faker::Lorem.word] }
+    periods { [Faker::Number.number(digits: 1).to_s, Faker::Number.number(digits: 1).to_s] }
+    resources { [FactoryBot.build(:one_roster_guid_ref, type: 'resource')] }
     course { FactoryBot.build(:one_roster_guid_ref, type: 'course') }
     school { FactoryBot.build(:one_roster_guid_ref, type: 'org') }
     terms { [FactoryBot.build(:one_roster_guid_ref, type: 'academicSession')] }
