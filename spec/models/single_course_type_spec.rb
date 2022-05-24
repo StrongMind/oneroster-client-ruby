@@ -19,7 +19,8 @@ require 'date'
 describe 'SingleCourseType' do
   before do
     # run before each test
-    @instance = OneRosterClient::SingleCourseType.new
+    obj = build(:one_roster_single_course)
+    @instance = OneRosterClient::SingleCourseType.build_from_hash obj.to_hash
   end
 
   after do
