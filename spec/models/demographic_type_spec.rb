@@ -19,7 +19,9 @@ require 'date'
 describe 'DemographicType' do
   before do
     # run before each test
-    @instance = OneRosterClient::DemographicType.new
+    obj = build(:one_roster_demographic)
+    @instance = OneRosterClient::DemographicType.build_from_hash obj.to_hash
+
   end
 
   after do
@@ -32,96 +34,95 @@ describe 'DemographicType' do
     end
   end
   describe 'test attribute "birth_date"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    it 'should be a date' do
+      expect(@instance.birth_date).to be_instance_of(Date)
     end
   end
 
   describe 'test attribute "sex"' do
-    it 'should work' do
+    it 'should be a string' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
       # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["male", "female"])
       # validator.allowable_values.each do |value|
-      #   expect { @instance.sex = value }.not_to raise_error
-      # end
+      expect(@instance.sex).to be_instance_of(String)
     end
   end
 
   describe 'test attribute "american_indian_or_alaska_native"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.american_indian_or_alaska_native).to be(true).or be(false)
     end
   end
 
   describe 'test attribute "asian"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.asian).to be(true).or be(false)
     end
   end
 
   describe 'test attribute "black_or_african_american"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.black_or_african_american).to be(true).or be(false)
     end
   end
 
   describe 'test attribute "native_hawaiian_or_other_pacific_islander"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.native_hawaiian_or_other_pacific_islander).to be(true).or be(false)
     end
   end
 
   describe 'test attribute "white"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.white).to be(true).or be(false)
     end
   end
 
   describe 'test attribute "demographic_race_two_or_more_races"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.demographic_race_two_or_more_races).to be(true).or be(false)
     end
   end
 
   describe 'test attribute "hispanic_or_latino_ethnicity"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.hispanic_or_latino_ethnicity).to be(true).or be(false)
     end
   end
 
   describe 'test attribute "country_of_birth_code"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.country_of_birth_code).to be_instance_of(String)
     end
   end
 
   describe 'test attribute "state_of_birth_abbreviation"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.state_of_birth_abbreviation).to be_instance_of(String)
     end
   end
 
   describe 'test attribute "city_of_birth"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.city_of_birth).to be_instance_of(String)
     end
   end
 
   describe 'test attribute "public_school_residence_status"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.public_school_residence_status).to be_instance_of(String)
     end
   end
 
   describe 'test attribute "sourced_id"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.sourced_id).to be_instance_of(String)
     end
   end
 
   describe 'test attribute "status"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.status).to be_instance_of(String)
       # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["active", "tobedeleted"])
       # validator.allowable_values.each do |value|
       #   expect { @instance.status = value }.not_to raise_error
@@ -131,13 +132,13 @@ describe 'DemographicType' do
 
   describe 'test attribute "date_last_modified"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.date_last_modified).to be_instance_of(DateTime)
     end
   end
 
   describe 'test attribute "metadata"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.metadata).to be_instance_of(Hash)
     end
   end
 
