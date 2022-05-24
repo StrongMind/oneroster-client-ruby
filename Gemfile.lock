@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    oneroster_client (1.1.2)
+    oneroster_client (1.2.0)
       json (~> 2.1, >= 2.1.0)
       typhoeus (~> 1.0, >= 1.0.1)
 

@@ -67,7 +67,6 @@ describe 'ResultType' do
 
   describe 'test attribute "comment"' do
     it 'should work' do
-      pp @instance
       expect(@instance.comment).to be_instance_of(String)
     end
   end
