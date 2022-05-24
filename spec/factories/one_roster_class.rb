@@ -6,7 +6,7 @@ FactoryBot.define do
   factory :one_roster_class, class: OneRosterClient::ClassType do
     sourced_id { SecureRandom.uuid }
     status { 'active' }
-    date_last_modified { Faker::Time.between(from: DateTime.now - 1, to: DateTime.now) }
+    date_last_modified { Faker::Time.between(from: DateTime.now - 1, to: DateTime.now).to_s }
     metadata do
       {
         StrongMind: { powerschool_section_dcid: Faker::Number.number(digits: 5) }
@@ -22,9 +22,10 @@ FactoryBot.define do
       ]
     end
     subjects { [Faker::Lorem.word, Faker::Lorem.word] }
+    subject_codes { [Faker::Lorem.word, Faker::Lorem.word] }
     course { FactoryBot.build(:one_roster_guid_ref, type: 'course') }
     school { FactoryBot.build(:one_roster_guid_ref, type: 'org') }
-    terms { [FactoryBot.build(:one_roster_guid_ref, type: 'term')] }
+    terms { [FactoryBot.build(:one_roster_guid_ref, type: 'academicSession')] }
   end
 
   factory :one_roster_single_class, class: OneRosterClient::SingleClassType do

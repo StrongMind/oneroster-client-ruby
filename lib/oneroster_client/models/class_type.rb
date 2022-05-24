@@ -104,22 +104,22 @@ module OneRosterClient
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'title' => :'',
-        :'class_code' => :'',
-        :'class_type' => :'',
-        :'location' => :'',
-        :'grades' => :'',
-        :'subjects' => :'',
-        :'course' => :'',
-        :'school' => :'',
-        :'terms' => :'',
-        :'subject_codes' => :'',
-        :'periods' => :'',
-        :'resources' => :'',
-        :'sourced_id' => :'',
-        :'status' => :'',
-        :'date_last_modified' => :'',
-        :'metadata' => :''
+        :'title' => :'String',
+        :'class_code' => :'String',
+        :'class_type' => :'String',
+        :'location' => :'String',
+        :'grades' => :'Array<String>',
+        :'subjects' => :'Array<String>',
+        :'course' => :'GUIDRefType',
+        :'school' => :'GUIDRefType',
+        :'terms' => :'Array<GUIDRefType>',
+        :'subject_codes' => :'Array<String>',
+        :'periods' => :'Array<String>',
+        :'resources' => :'Array<GUIDRefType>',
+        :'sourced_id' => :'String',
+        :'status' => :'String',
+        :'date_last_modified' => :'DateTime',
+        :'metadata' => :'Object'
       }
     end
 
@@ -128,7 +128,7 @@ module OneRosterClient
       Set.new([
       ])
     end
-  
+
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
@@ -333,6 +333,9 @@ module OneRosterClient
       return nil unless attributes.is_a?(Hash)
       super(attributes)
       self.class.openapi_types.each_pair do |key, type|
+        if type == :""
+          raise "No type for #{key}."
+        end
         if type =~ /\AArray<(.*)>/i
           # check to ensure the input is an array given that the attribute
           # is documented as an array but the input is not

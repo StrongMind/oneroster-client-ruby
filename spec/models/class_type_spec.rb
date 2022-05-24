@@ -19,7 +19,8 @@ require 'date'
 describe 'ClassType' do
   before do
     # run before each test
-    @instance = OneRosterClient::ClassType.new
+    obj = build(:one_roster_class)
+    @instance = OneRosterClient::ClassType.build_from_hash(obj.to_hash)
   end
 
   after do
