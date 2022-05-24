@@ -26,7 +26,7 @@ module OneRosterClient
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'academic_sessions' => :'Object'
+        :'academic_sessions' => :'Array<AcademicSessionType>'
       }
     end
 

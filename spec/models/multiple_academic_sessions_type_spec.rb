@@ -19,7 +19,8 @@ require 'date'
 describe 'MultipleAcademicSessionsType' do
   before do
     # run before each test
-    @instance = OneRosterClient::MultipleAcademicSessionsType.new
+    obj = build(:one_roster_academic_session)
+    @instance = OneRosterClient::MultipleAcademicSessionsType.build_from_hash({:academicSessions => [obj.to_hash]})
   end
 
   after do
@@ -33,7 +34,12 @@ describe 'MultipleAcademicSessionsType' do
   end
   describe 'test attribute "academic_sessions"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.academic_sessions).to be_a(Array)
+    end
+    it 'contains academic_sessions' do
+      @instance.academic_sessions.each do |item|
+        expect(item).to be_a(OneRosterClient::AcademicSessionType)
+      end
     end
   end
 
