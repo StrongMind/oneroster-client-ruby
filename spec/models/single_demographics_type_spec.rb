@@ -19,7 +19,8 @@ require 'date'
 describe 'SingleDemographicsType' do
   before do
     # run before each test
-    @instance = OneRosterClient::SingleDemographicsType.new
+    factory = build(:one_roster_single_demographic)
+    @instance = OneRosterClient::SingleDemographicsType.build_from_hash factory.to_hash
   end
 
   after do
