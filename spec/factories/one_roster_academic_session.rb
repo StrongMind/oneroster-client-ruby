@@ -6,8 +6,8 @@ FactoryBot.define do
   factory :one_roster_academic_session, class: OneRosterClient::AcademicSessionType do
     sourced_id { SecureRandom.uuid }
     status { 'active' }
-    date_last_modified { Faker::Time.between(from: DateTime.now - 1, to: DateTime.now) }
-    metadata {}
+    date_last_modified { Faker::Time.between(from: DateTime.now - 1, to: DateTime.now).to_s }
+    metadata { {} }
     title { Faker::Lorem.sentence }
     start_date { Faker::Date.backward(days: 1).to_s }
     end_date { Faker::Date.forward(days: 1).to_s }

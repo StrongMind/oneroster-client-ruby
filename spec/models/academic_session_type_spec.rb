@@ -62,48 +62,48 @@ describe 'AcademicSessionType' do
 
   describe 'test attribute "parent"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.parent).to be_a(OneRosterClient::GUIDRefType)
     end
   end
 
   describe 'test attribute "children"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.children).to be_a(Array)
+      expect(@instance.children[0]).to be_a(OneRosterClient::GUIDRefType)
     end
   end
 
   describe 'test attribute "school_year"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.school_year).to be_a(Integer)
     end
   end
 
   describe 'test attribute "sourced_id"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.sourced_id).to be_a(String)
     end
   end
 
   describe 'test attribute "status"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["active", "tobedeleted"])
-      # validator.allowable_values.each do |value|
-      #   expect { @instance.status = value }.not_to raise_error
-      # end
+      status_validator = OneRosterClient::AcademicSessionType::EnumAttributeValidator.new('', ['active', 'tobedeleted'])
+      status_validator.allowable_values.each do |value|
+        expect { @instance.status = value }.not_to raise_error
+      end
     end
-  end
 
-  describe 'test attribute "date_last_modified"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    describe 'test attribute "date_last_modified"' do
+      it 'should work' do
+        expect(@instance.date_last_modified).to be_a(DateTime)
+      end
     end
-  end
 
-  describe 'test attribute "metadata"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    describe 'test attribute "metadata"' do
+      it 'should work' do
+        expect(@instance.metadata).to be_a(Hash)
+      end
     end
-  end
 
+  end
 end
