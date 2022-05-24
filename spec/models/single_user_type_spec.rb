@@ -19,7 +19,8 @@ require 'date'
 describe 'SingleUserType' do
   before do
     # run before each test
-    @instance = OneRosterClient::SingleUserType.new
+    factory = build(:one_roster_single_user)
+    @instance = OneRosterClient::SingleUserType.build_from_hash factory.to_hash
   end
 
   after do
@@ -32,8 +33,8 @@ describe 'SingleUserType' do
     end
   end
   describe 'test attribute "user"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    it 'should be a UserType' do
+      expect(@instance.user).to be_instance_of(OneRosterClient::UserType)
     end
   end
 

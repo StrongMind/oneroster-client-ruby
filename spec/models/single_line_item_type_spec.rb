@@ -19,7 +19,8 @@ require 'date'
 describe 'SingleLineItemType' do
   before do
     # run before each test
-    @instance = OneRosterClient::SingleLineItemType.new
+    factory = build(:one_roster_single_line_item)
+    @instance = OneRosterClient::SingleLineItemType.build_from_hash factory.to_hash
   end
 
   after do
@@ -32,8 +33,8 @@ describe 'SingleLineItemType' do
     end
   end
   describe 'test attribute "line_item"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    it 'should be a LineItemType' do
+      expect(@instance.line_item).to be_instance_of(OneRosterClient::LineItemType)
     end
   end
 
