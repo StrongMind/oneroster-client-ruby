@@ -33,19 +33,19 @@ describe 'ResultType' do
   end
   describe 'test attribute "line_item"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.line_item).to be_instance_of(OneRosterClient::GUIDRefType)
     end
   end
 
   describe 'test attribute "student"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.student).to be_instance_of(OneRosterClient::GUIDRefType)
     end
   end
 
   describe 'test attribute "score_status"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.score_status).to be_instance_of(String)
       # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["exempt", "fully graded", "not submmitted", "partially graded", "submitted"])
       # validator.allowable_values.each do |value|
       #   expect { @instance.score_status = value }.not_to raise_error
@@ -55,31 +55,32 @@ describe 'ResultType' do
 
   describe 'test attribute "score"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.score).to be_instance_of(Float)
     end
   end
 
   describe 'test attribute "score_date"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.score_date).to be_instance_of(DateTime)
     end
   end
 
   describe 'test attribute "comment"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      pp @instance
+      expect(@instance.comment).to be_instance_of(String)
     end
   end
 
   describe 'test attribute "sourced_id"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.sourced_id).to be_instance_of(String)
     end
   end
 
   describe 'test attribute "status"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.status).to be_instance_of(String)
       # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["active", "tobedeleted"])
       # validator.allowable_values.each do |value|
       #   expect { @instance.status = value }.not_to raise_error
@@ -89,13 +90,13 @@ describe 'ResultType' do
 
   describe 'test attribute "date_last_modified"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.date_last_modified).to be_instance_of(DateTime)
     end
   end
 
   describe 'test attribute "metadata"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.metadata).to be_instance_of(Hash)
     end
   end
 
