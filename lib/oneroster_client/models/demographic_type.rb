@@ -21,7 +21,7 @@ module OneRosterClient
     attr_accessor :sex
 
     # Model Primitive Datatype = Boolean
-    attr_accessor :american_indian_or_alsaka_native
+    attr_accessor :american_indian_or_alaska_native
 
     # Model Primitive Datatype = Boolean
     attr_accessor :asian
@@ -91,7 +91,7 @@ module OneRosterClient
       {
         :'birth_date' => :'birthDate',
         :'sex' => :'sex',
-        :'american_indian_or_alsaka_native' => :'americanIndianOrAlsakaNative',
+        :'american_indian_or_alaska_native' => :'americanIndianOrAlaskaNative',
         :'asian' => :'asian',
         :'black_or_african_american' => :'blackOrAfricanAmerican',
         :'native_hawaiian_or_other_pacific_islander' => :'nativeHawaiianOrOtherPacificIslander',
@@ -114,7 +114,7 @@ module OneRosterClient
       {
         :'birth_date' => :'',
         :'sex' => :'',
-        :'american_indian_or_alsaka_native' => :'',
+        :'american_indian_or_alaska_native' => :'',
         :'asian' => :'',
         :'black_or_african_american' => :'',
         :'native_hawaiian_or_other_pacific_islander' => :'',
@@ -164,8 +164,8 @@ module OneRosterClient
         self.sex = attributes[:'sex']
       end
 
-      if attributes.key?(:'american_indian_or_alsaka_native')
-        self.american_indian_or_alsaka_native = attributes[:'american_indian_or_alsaka_native']
+      if attributes.key?(:'american_indian_or_alaska_native')
+        self.american_indian_or_alaska_native = attributes[:'american_indian_or_alaska_native']
       end
 
       if attributes.key?(:'asian')
@@ -284,7 +284,7 @@ module OneRosterClient
       self.class == o.class &&
           birth_date == o.birth_date &&
           sex == o.sex &&
-          american_indian_or_alsaka_native == o.american_indian_or_alsaka_native &&
+          american_indian_or_alaska_native == o.american_indian_or_alaska_native &&
           asian == o.asian &&
           black_or_african_american == o.black_or_african_american &&
           native_hawaiian_or_other_pacific_islander == o.native_hawaiian_or_other_pacific_islander &&
@@ -310,7 +310,7 @@ module OneRosterClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [birth_date, sex, american_indian_or_alsaka_native, asian, black_or_african_american, native_hawaiian_or_other_pacific_islander, white, demographic_race_two_or_more_races, hispanic_or_latino_ethnicity, country_of_birth_code, state_of_birth_abbreviation, city_of_birth, public_school_residence_status, sourced_id, status, date_last_modified, metadata].hash
+      [birth_date, sex, american_indian_or_alaska_native, asian, black_or_african_american, native_hawaiian_or_other_pacific_islander, white, demographic_race_two_or_more_races, hispanic_or_latino_ethnicity, country_of_birth_code, state_of_birth_abbreviation, city_of_birth, public_school_residence_status, sourced_id, status, date_last_modified, metadata].hash
     end
 
     # Builds the object from hash
