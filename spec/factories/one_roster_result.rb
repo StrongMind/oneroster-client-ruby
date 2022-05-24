@@ -10,7 +10,7 @@ FactoryBot.define do
     metadata do
       {
         StrongMind: {
-          last_activity_at: Faker::Time.backward(days: 1),g
+          last_activity_at: Faker::Time.backward(days: 1),
           total_activity_time: Faker::Number.number(digits: 5)
         }
       }
