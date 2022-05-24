@@ -34,25 +34,25 @@ describe 'EnrollmentType' do
   end
   describe 'test attribute "user"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.user).to be_a(OneRosterClient::GUIDRefType)
     end
   end
 
   describe 'test attribute "_class"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance._class).to be_a(OneRosterClient::GUIDRefType)
     end
   end
 
   describe 'test attribute "school"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.school).to be_a(OneRosterClient::GUIDRefType)
     end
   end
 
   describe 'test attribute "role"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.role).to be_a(String)
       # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["administrator", "aide", "guardian", "parent", "proctor", "relative", "student", "teacher"])
       # validator.allowable_values.each do |value|
       #   expect { @instance.role = value }.not_to raise_error
@@ -62,31 +62,31 @@ describe 'EnrollmentType' do
 
   describe 'test attribute "primary"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.primary).to be_a(TrueClass).or be_a(FalseClass)
     end
   end
 
   describe 'test attribute "begin_date"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.begin_date).to be_a(Date)
     end
   end
 
   describe 'test attribute "end_date"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.end_date).to be_a(Date)
     end
   end
 
   describe 'test attribute "sourced_id"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.sourced_id).to be_a(String)
     end
   end
 
   describe 'test attribute "status"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.status).to be_a(String)
       # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["active", "tobedeleted"])
       # validator.allowable_values.each do |value|
       #   expect { @instance.status = value }.not_to raise_error
@@ -96,13 +96,13 @@ describe 'EnrollmentType' do
 
   describe 'test attribute "date_last_modified"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.date_last_modified).to be_a(DateTime)
     end
   end
 
   describe 'test attribute "metadata"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.metadata).to be_a(Hash)
     end
   end
 
