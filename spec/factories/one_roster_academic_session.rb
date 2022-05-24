@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'faker'
-require 'platform_sdk'
 
 FactoryBot.define do
   factory :one_roster_academic_session, class: OneRosterClient::AcademicSessionType do
@@ -10,13 +9,12 @@ FactoryBot.define do
     date_last_modified { Faker::Time.between(from: DateTime.now - 1, to: DateTime.now) }
     metadata {}
     title { Faker::Lorem.sentence }
-    start_date { Faker::Time.between(from: DateTime.now - 1, to: DateTime.now).to_s }
-    end_date { Faker::Time.between(from: DateTime.now, to: DateTime.now + 1).to_s }
+    start_date { Faker::Date.backward(days: 1).to_s }
+    end_date { Faker::Date.forward(days: 1).to_s }
     type { %w[gradingPeriod semester schoolYear term].sample }
     parent { FactoryBot.build(:one_roster_guid_ref, type: 'term') }
     children { [FactoryBot.build(:one_roster_guid_ref, type: 'term')] }
     school_year { Faker::Number.between(from: 2000, to: 2100) }
-    initialize_with { attributes }
   end
 
   factory :one_roster_single_academic_session, class: OneRosterClient::SingleAcademicSessionType do

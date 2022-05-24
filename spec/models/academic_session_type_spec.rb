@@ -19,7 +19,8 @@ require 'date'
 describe 'AcademicSessionType' do
   before do
     # run before each test
-    @instance = OneRosterClient::AcademicSessionType.new
+    obj = build(:one_roster_academic_session)
+    @instance = OneRosterClient::AcademicSessionType.build_from_hash(obj.to_hash)
   end
 
   after do
@@ -33,29 +34,29 @@ describe 'AcademicSessionType' do
   end
   describe 'test attribute "title"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.title).to be_a(String)
     end
   end
 
   describe 'test attribute "start_date"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.start_date).to be_a(Date)
     end
   end
 
   describe 'test attribute "end_date"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@instance.end_date).to be_a(Date)
     end
   end
 
   describe 'test attribute "type"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["gradingPeriod", "semester", "schoolYear", "term"])
-      # validator.allowable_values.each do |value|
-      #   expect { @instance.type = value }.not_to raise_error
-      # end
+      type_validator = OneRosterClient::AcademicSessionType::EnumAttributeValidator.new(
+        '', ['gradingPeriod', 'semester', 'schoolYear', 'term'])
+      type_validator.allowable_values.each do |value|
+        expect { @instance.type = value }.not_to raise_error
+      end
     end
   end
 
