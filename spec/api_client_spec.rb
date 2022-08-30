@@ -222,4 +222,22 @@ describe OneRosterClient::ApiClient do
       expect(api_client.sanitize_filename('.\sun.gif')).to eq('sun.gif')
     end
   end
+
+  describe '#call_api' do
+    let(:api_client) { OneRosterClient::ApiClient.new }
+
+    before do
+      @path = Faker::Lorem.word
+      @url = api_client.config.base_url + '/' + @path
+    end
+
+    it 'makes request' do
+      response = Typhoeus::Response.new(code: 200)
+      Typhoeus.stub(@url).and_return(response)
+      _, status_code, headers = api_client.call_api('GET', @path, {})
+      expect(status_code).to eq(200)
+      expect(headers).to eq(response.headers)
+    end
+
+  end
 end
