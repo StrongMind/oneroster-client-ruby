@@ -239,5 +239,19 @@ describe OneRosterClient::ApiClient do
       expect(headers).to eq(response.headers)
     end
 
+    it 'raises server errors' do
+      code = rand(500..600)
+      response = Typhoeus::Response.new(code:)
+      Typhoeus.stub(@url).and_return(response)
+      expect { api_client.call_api('GET', @path, {}) }.to raise_error(OneRosterClient::ServerError)
+    end
+
+    it 'raises client errors' do
+      code = rand(400..500)
+      response = Typhoeus::Response.new(code:)
+      Typhoeus.stub(@url).and_return(response)
+      expect { api_client.call_api('GET', @path, {}) }.to raise_error(OneRosterClient::ClientError)
+    end
+
   end
 end
