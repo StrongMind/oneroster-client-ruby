@@ -12,6 +12,7 @@ Swagger Codegen version: 3.0.34
 # Common files
 require 'oneroster_client/api_client'
 require 'oneroster_client/api_error'
+require 'oneroster_client/error'
 require 'oneroster_client/version'
 require 'oneroster_client/configuration'
 
