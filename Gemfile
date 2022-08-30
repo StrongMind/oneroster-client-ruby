@@ -8,4 +8,5 @@ group :development, :test do
   gem 'rubocop', '~> 0.66.0'
   gem "faker"
   gem "factory_bot"
+  gem 'rspec', '~> 3.6', '>= 3.6.0'
 end
