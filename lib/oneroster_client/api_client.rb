@@ -66,7 +66,9 @@ module OneRosterClient
         #                     :response_body => response.body),
         #        response.status_message
         # end
-        if response.code >= 500 and response.code < 600
+        if response.timed_out?
+          fail TimeoutError.new
+        elsif response.code >= 500 and response.code < 600
           fail ServerError.new
         elsif response.code >= 400 and response.code < 500
           fail ClientError.new

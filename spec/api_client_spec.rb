@@ -253,5 +253,11 @@ describe OneRosterClient::ApiClient do
       expect { api_client.call_api('GET', @path, {}) }.to raise_error(OneRosterClient::ClientError)
     end
 
+    it 'raises timeout errors' do
+      response = Typhoeus::Response.new(return_code: :operation_timedout)
+      Typhoeus.stub(@url).and_return(response)
+      expect { api_client.call_api('GET', @path, {}) }.to raise_error(OneRosterClient::TimeoutError)
+    end
+
   end
 end

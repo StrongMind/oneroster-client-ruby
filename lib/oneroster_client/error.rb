@@ -67,5 +67,8 @@ module OneRosterClient
 
   class ServerError < Error
   end
+
+  class TimeoutError < Error
+  end
 end
 
