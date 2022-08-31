@@ -29,18 +29,23 @@ module OneRosterClient
       @dependency_name = 'OneRoster'
       @msg = message if message
       @response = { request: {} }
-      return unless response
+      build_response(response) if response
+    end
 
+    def build_response(response)
       @response[:status] = response.response_code
       @response[:headers] = response.response_headers
       @response[:body] = response.response_body
-      return unless response.request
 
-      @response[:request][:method] = response.request.options[:method]
-      @response[:request][:url] = response.request.base_url
-      @response[:request][:body] = response.request.options[:body]
-      @response[:request][:params] = response.request.options[:params]
-      @response[:request][:headers] = response.request.options[:headers]
+      build_request(response.request) if response.request
+    end
+
+    def build_request(request)
+      @response[:request][:method] = request.options[:method]
+      @response[:request][:url] = request.base_url
+      @response[:request][:body] = request.options[:body]
+      @response[:request][:params] = request.options[:params]
+      @response[:request][:headers] = request.options[:headers]
     end
 
     # Override to_s to display a friendly error message
@@ -58,10 +63,8 @@ module OneRosterClient
       msg += "\nHTTP status code: #{@response[:status]}" if @response[:status]
       msg += "\nResponse headers: #{@response[:headers]}" if @response[:headers]
       msg += "\nResponse body: #{@response[:body]}" if @response[:body]
-
       msg
     end
-
   end
 
   class ClientError < Error
