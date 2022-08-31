@@ -222,4 +222,61 @@ describe OneRosterClient::ApiClient do
       expect(api_client.sanitize_filename('.\sun.gif')).to eq('sun.gif')
     end
   end
+
+  describe '#call_api' do
+    let(:api_client) { OneRosterClient::ApiClient.new }
+
+    before do
+      @path = Faker::Lorem.word
+      @url = api_client.config.base_url + '/' + @path
+    end
+
+    it 'makes request' do
+      response = Typhoeus::Response.new(code: 200)
+      Typhoeus.stub(@url).and_return(response)
+      _, status_code, headers = api_client.call_api('GET', @path, {})
+      expect(status_code).to eq(200)
+      expect(headers).to eq(response.headers)
+    end
+
+    it 'raises server errors' do
+      code = rand(500..600)
+      response = Typhoeus::Response.new(code:)
+      Typhoeus.stub(@url).and_return(response)
+      expect { api_client.call_api('GET', @path, {}) }.to raise_error { |error|
+        expect(error).to be_a(OneRosterClient::ServerError)
+        expect(error.response[:status]).to eq(code)
+      }
+    end
+
+    it 'raises client errors' do
+      code = rand(400..500)
+      response = Typhoeus::Response.new(code:)
+      Typhoeus.stub(@url).and_return(response)
+      expect { api_client.call_api('GET', @path, {}) }.to raise_error { |error|
+        expect(error).to be_a(OneRosterClient::ClientError)
+        expect(error.response[:status]).to eq(code)
+      }
+    end
+
+    it 'raises timeout errors' do
+      response = Typhoeus::Response.new(return_code: :operation_timedout)
+      Typhoeus.stub(@url).and_return(response)
+      expect { api_client.call_api('GET', @path, {}) }.to raise_error { |error|
+        expect(error).to be_a(OneRosterClient::TimeoutError)
+        expect(error.message).to include("Connection timed out")
+      }
+    end
+
+    it 'raises error with status code 0' do
+      response = Typhoeus::Response.new({code: 0})
+      Typhoeus.stub(@url).and_return(response)
+      expect { api_client.call_api('GET', @path, {}) }.to raise_error { |error|
+        expect(error).to be_a(OneRosterClient::NilStatusError)
+        expect(error.response[:status]).to eq(0)
+        expect(error.message).to include("HTTP status could not be derived")
+      }
+    end
+
+  end
 end
