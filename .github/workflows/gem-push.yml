@@ -30,6 +30,7 @@ jobs:
       run: bundle exec rspec
 
     - name: Publish to GPR
+      if: github.event_name != 'pull_request'
       run: |
         mkdir -p $HOME/.gem
         touch $HOME/.gem/credentials
