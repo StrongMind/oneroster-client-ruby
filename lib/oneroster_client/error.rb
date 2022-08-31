@@ -28,11 +28,13 @@ module OneRosterClient
     def initialize(response = nil, message = nil)
       @dependency_name = 'OneRoster'
       @message = message if message
+      @response = { request: {} }
       return unless response
 
       @response[:status] = response.response_code
       @response[:headers] = response.response_headers
       @response[:body] = response.response_body
+      return unless response.request
 
       @response[:request][:method] = response.request.options[:method]
       @response[:request][:url] = response.request.base_url
