@@ -31,10 +31,11 @@ module OneRosterClient
     # @param [ String ] message Additional message info
     def initialize(response = nil, message = nil)
       @dependency_name = 'OneRoster'
-      @msg = message if message
       @response = { request: {} }
+      @msg = message if message
       @original_response = response
-      build_response(response) if response
+
+      build_response if response
     end
 
     # Override to_s to display a friendly error message
@@ -57,20 +58,21 @@ module OneRosterClient
 
     private
 
-    def build_response(response)
-      @response[:status] = response.response_code
-      @response[:headers] = response.response_headers
-      @response[:body] = response.response_body
+    # Builds the formatted response hash based on the original Typhoeus Response object
+    def build_response
+      @response[:status] = @original_response.response_code
+      @response[:headers] = @original_response.response_headers
+      @response[:body] = @original_response.response_body
 
-      build_request(response.request) if response.request
+      build_request if @original_response.request
     end
 
-    def build_request(request)
-      @response[:request][:method] = request.options[:method]
-      @response[:request][:url] = request.base_url
-      @response[:request][:body] = request.options[:body]
-      @response[:request][:params] = request.options[:params]
-      @response[:request][:headers] = request.options[:headers]
+    def build_request
+      @response[:request][:method] = @original_response.request.options[:method]
+      @response[:request][:url] = @original_response.request.base_url
+      @response[:request][:body] = @original_response.request.options[:body]
+      @response[:request][:params] = @original_response.request.options[:params]
+      @response[:request][:headers] = @original_response.request.options[:headers]
     end
   end
 
