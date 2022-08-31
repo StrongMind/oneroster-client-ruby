@@ -18,6 +18,10 @@ module OneRosterClient
     #                           :body     - String HTTP request body.
     attr_reader :response
 
+    # The original response object via Typhoeus
+    # @return [ Typhoeus::Response ]
+    attr_reader :original_response
+
     # Frozen string representing the dependency raising the error
     # @return [ String ]
     attr_reader :dependency_name
@@ -29,6 +33,7 @@ module OneRosterClient
       @dependency_name = 'OneRoster'
       @msg = message if message
       @response = { request: {} }
+      @original_response = response
       build_response(response) if response
     end
 

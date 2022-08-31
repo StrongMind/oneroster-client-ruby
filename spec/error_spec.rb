@@ -25,6 +25,8 @@ RSpec.describe OneRosterClient::ServerError do
       it { expect(subject.response[:status]).to eq(500)}
       it { expect(subject.response[:headers]).to eq(response_headers)}
       it { expect(subject.response[:body]).to eq(body)}
+      it { expect(subject.original_response).to eq(response)}
+
     end
 
     context 'with response that has request' do
