@@ -68,10 +68,13 @@ module OneRosterClient
         # end
         if response.timed_out?
           fail TimeoutError.new
+        elsif response.code == 0
+          # Errors from libcurl will be made visible here
+          fail NilStatusError.new(response)
         elsif response.code >= 500 and response.code < 600
-          fail ServerError.new
+          fail ServerError.new(response)
         elsif response.code >= 400 and response.code < 500
-          fail ClientError.new
+          fail ClientError.new(response)
         end
       end
 

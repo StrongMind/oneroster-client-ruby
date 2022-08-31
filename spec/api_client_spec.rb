@@ -243,20 +243,39 @@ describe OneRosterClient::ApiClient do
       code = rand(500..600)
       response = Typhoeus::Response.new(code:)
       Typhoeus.stub(@url).and_return(response)
-      expect { api_client.call_api('GET', @path, {}) }.to raise_error(OneRosterClient::ServerError)
+      expect { api_client.call_api('GET', @path, {}) }.to raise_error { |error|
+        expect(error).to be_a(OneRosterClient::ServerError)
+        expect(error.response[:status]).to eq(code)
+      }
     end
 
     it 'raises client errors' do
       code = rand(400..500)
       response = Typhoeus::Response.new(code:)
       Typhoeus.stub(@url).and_return(response)
-      expect { api_client.call_api('GET', @path, {}) }.to raise_error(OneRosterClient::ClientError)
+      expect { api_client.call_api('GET', @path, {}) }.to raise_error { |error|
+        expect(error).to be_a(OneRosterClient::ClientError)
+        expect(error.response[:status]).to eq(code)
+      }
     end
 
     it 'raises timeout errors' do
       response = Typhoeus::Response.new(return_code: :operation_timedout)
       Typhoeus.stub(@url).and_return(response)
-      expect { api_client.call_api('GET', @path, {}) }.to raise_error(OneRosterClient::TimeoutError)
+      expect { api_client.call_api('GET', @path, {}) }.to raise_error { |error|
+        expect(error).to be_a(OneRosterClient::TimeoutError)
+        expect(error.message).to include("Connection timed out")
+      }
+    end
+
+    it 'raises error with status code 0' do
+      response = Typhoeus::Response.new({code: 0})
+      Typhoeus.stub(@url).and_return(response)
+      expect { api_client.call_api('GET', @path, {}) }.to raise_error { |error|
+        expect(error).to be_a(OneRosterClient::NilStatusError)
+        expect(error.response[:status]).to eq(0)
+        expect(error.message).to include("HTTP status could not be derived")
+      }
     end
 
   end

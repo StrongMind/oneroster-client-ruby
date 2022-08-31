@@ -27,7 +27,7 @@ module OneRosterClient
     # @param [ String ] message Additional message info
     def initialize(response = nil, message = nil)
       @dependency_name = 'OneRoster'
-      @message = message if message
+      @msg = message if message
       @response = { request: {} }
       return unless response
 
@@ -49,10 +49,10 @@ module OneRosterClient
     end
 
     def message
-      if @message.nil?
+      if @msg.nil?
         msg = "Error message: the server returned an error"
       else
-        msg = @message
+        msg = @msg
       end
 
       msg += "\nHTTP status code: #{@response[:status]}" if @response[:status]
@@ -71,6 +71,15 @@ module OneRosterClient
   end
 
   class TimeoutError < Error
+    def initialize(response = nil, message = "Connection timed out")
+      super(response, message)
+    end
+  end
+
+  class NilStatusError < ServerError
+    def initialize(response = nil, message = "HTTP status could not be derived from the server response")
+      super(response, message)
+    end
   end
 end
 
