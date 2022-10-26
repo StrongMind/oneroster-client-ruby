@@ -91,7 +91,7 @@ module OneRosterClient
       {
         :'birth_date' => :'birthDate',
         :'sex' => :'sex',
-        :'american_indian_or_alaska_native' => :'americanIndianOrAlsakaNative',
+        :'american_indian_or_alaska_native' => :'americanIndianOrAlaskaNative',
         :'asian' => :'asian',
         :'black_or_african_american' => :'blackOrAfricanAmerican',
         :'native_hawaiian_or_other_pacific_islander' => :'nativeHawaiianOrOtherPacificIslander',
@@ -247,8 +247,8 @@ module OneRosterClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      sex_validator = EnumAttributeValidator.new('', ['male', 'female'])
-      return false unless sex_validator.valid?(@sex)
+      # sex_validator = EnumAttributeValidator.new('', ['male', 'female'])
+      # return false unless sex_validator.valid?(@sex)
       return false if @sourced_id.nil?
       return false if @status.nil?
       status_validator = EnumAttributeValidator.new('', ['active', 'tobedeleted'])
@@ -260,10 +260,10 @@ module OneRosterClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] sex Object to be assigned
     def sex=(sex)
-      validator = EnumAttributeValidator.new('', ['male', 'female'])
-      unless validator.valid?(sex)
-        fail ArgumentError, "invalid value for \"sex\", must be one of #{validator.allowable_values}."
-      end
+      # validator = EnumAttributeValidator.new('', ['male', 'female'])
+      # unless validator.valid?(sex)
+      #   fail ArgumentError, "invalid value for \"sex\", must be one of #{validator.allowable_values}."
+      # end
       @sex = sex
     end
 
