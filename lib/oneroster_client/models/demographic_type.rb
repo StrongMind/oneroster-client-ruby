@@ -91,7 +91,7 @@ module OneRosterClient
       {
         :'birth_date' => :'birthDate',
         :'sex' => :'sex',
-        :'american_indian_or_alaska_native' => :'americanIndianOrAlsakaNative',
+        :'american_indian_or_alaska_native' => :'americanIndianOrAlaskaNative',
         :'asian' => :'asian',
         :'black_or_african_american' => :'blackOrAfricanAmerican',
         :'native_hawaiian_or_other_pacific_islander' => :'nativeHawaiianOrOtherPacificIslander',
